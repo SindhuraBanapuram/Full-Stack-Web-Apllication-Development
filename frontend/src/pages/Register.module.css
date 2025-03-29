@@ -1,13 +1,23 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 20px;
+  box-sizing: border-box;
 }
 
-.loginBox {
+.title {
+  text-align: right;
+  color: #2d3748;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 10px;
+}
+
+.form {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -15,23 +25,14 @@
   width: 100%;
   max-width: 420px;
   animation: fadeIn 0.4s ease-out;
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #000000;
-  font-size: 1.75rem;
-  font-weight: 700;
-}
-
-.form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-top: 20px; /* Added space between title and form */
 }
 
-.inputField {
+/* Rest of your existing styles remain the same */
+.input {
   padding: 0.9rem 1.2rem;
   border: 2px solid #e2e8f0;
   border-radius: 8px;
@@ -41,17 +42,13 @@
   box-sizing: border-box;
 }
 
-.inputField:focus {
+.input:focus {
   outline: none;
   border-color: #4f46e5;
   box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
 }
 
-.inputField::placeholder {
-  color: #a0aec0;
-}
-
-.submitButton {
+.button {
   background-color: #4f46e5;
   color: white;
   padding: 0.9rem;
@@ -65,22 +62,24 @@
   width: 100%;
 }
 
-.submitButton:hover {
+/* Rest of your existing styles... */
+
+.button:hover {
   background-color: #4338ca;
   transform: translateY(-1px);
 }
 
-.submitButton:active {
+.button:active {
   transform: translateY(0);
 }
-.registerPrompt {
+.loginPrompt {
   text-align: center;
   margin-top: 1rem;
   color: #4a5568;
   font-size: 0.9rem;
 }
 
-.registerLink {
+.loginLink {
   color: #4f46e5;
   font-weight: 600;
   cursor: pointer;
@@ -88,10 +87,9 @@
   transition: color 0.2s ease;
 }
 
-.registerLink:hover {
+.loginLink:hover {
   color: #4338ca;
 }
-
 /* Animations */
 @keyframes fadeIn {
   from {
@@ -106,7 +104,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 480px) {
-  .loginBox {
+  .form {
     padding: 1.8rem;
   }
   

@@ -1,14 +1,38 @@
 import { Link, useLocation } from "react-router-dom";
+import styles from "./Navbar.css";
 
 const Navbar = () => {
-  const location = useLocation(); // To highlight active page
+  const location = useLocation();
 
   return (
-    <nav>
-      <Link to="/" className={location.pathname === "/" ? "active" : ""}>Home</Link>
-      <Link to="/login" className={location.pathname === "/login" ? "active" : ""}>Login</Link>
-      <Link to="/register" className={location.pathname === "/register" ? "active" : ""}>Register</Link>
-      <Link to="/wishlist" className={location.pathname === "/wishlist" ? "active" : ""}>Wishlist</Link>
+    <nav className={styles.navbar}>
+      <Link 
+        to="/" 
+        className={`${styles.navLink} ${location.pathname === "/" ? styles.active : ""}`}
+      >
+        Home
+      </Link>
+      
+      <Link 
+        to="/wishlist" 
+        className={`${styles.navLink} ${location.pathname === "/wishlist" ? styles.active : ""}`}
+      >
+        Wishlist
+      </Link>
+      
+      <Link 
+        to="/notifications" 
+        className={`${styles.navLink} ${location.pathname === "/notifications" ? styles.active : ""}`}
+      >
+        Price Alerts
+      </Link>
+      
+      <Link 
+        to="/login" 
+        className={`${styles.navLink} ${location.pathname === "/login" ? styles.active : ""}`}
+      >
+        Logout
+      </Link>
     </nav>
   );
 };

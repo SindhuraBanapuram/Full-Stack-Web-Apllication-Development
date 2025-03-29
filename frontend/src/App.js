@@ -3,6 +3,7 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Wishlist from "./pages/Wishlist.jsx";
+import NotificationPage from './pages/NotificationPage.jsx';
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/notifications" element={<NotificationPage />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/wishlist" element={<Wishlist />} />
             </Routes>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import styles from "./Home.module.css";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -26,26 +27,46 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        alert(data.message); // Show success or error message
+        alert(data.message);
       })
       .catch((err) => console.error("Error adding to wishlist:", err));
   };
 
+  const openAmazonSearch = () => {
+    window.open(
+      "https://www.amazon.com/s?k=phones&language=en_US&crid=3A15I2OVN30B3&currency=INR&sprefix=phones%2Caps%2C384&ref=nb_sb_noss_1",
+      "_blank"
+    );
+  };
+
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Products</h2>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className={styles.container}>
+      <div className={styles.productsGrid}>
         {products.map((product) => (
-          <div key={product.id} className="border p-4 rounded-lg shadow-md">
-            <img src={product.image_url} alt={product.name} className="w-full h-40 object-cover" />
-            <h3 className="text-lg font-bold mt-2">{product.name}</h3>
-            <p className="text-green-600 font-semibold">${product.price}</p>
-            <button 
-              className="mt-2 bg-blue-500 text-white px-4 py-2 rounded" 
-              onClick={() => addToWishlist(product)}
-            >
-              Add to Wishlist
-            </button>
+          <div key={product.id} className={styles.productCard}>
+            <div className={styles.productContent}>
+              <img 
+                src={product.image_url} 
+                alt={product.name} 
+                className={styles.productImage} 
+              />
+              <h3 className={styles.productName}>{product.name}</h3>
+              <p className={styles.productPrice}>¥{product.price}</p>
+            </div>
+            <div className={styles.buttonGroup}>
+              <button 
+                className={styles.wishlistButton}
+                onClick={() => addToWishlist(product)}
+              >
+                Add to Wishlist
+              </button>
+              <button 
+                className={styles.viewButton}
+                onClick={openAmazonSearch}
+              >
+                View
+              </button>
+            </div>
           </div>
         ))}
       </div>

@@ -1,9 +1,11 @@
 import { useState } from "react";
-import "./Login.module.css"
+import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.css";
 
 const Login = () => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -21,15 +23,16 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
+    <div className={styles.container}>
+      <div className={styles.loginBox}>
+        <h2 className={styles.title}>Login</h2>
+        <form onSubmit={handleLogin} className={styles.form}>
           <input
             type="text"
             placeholder="Email or Username"
             value={identifier}
             onChange={(e) => setIdentifier(e.target.value)}
+            className={styles.inputField}
             required
           />
           <input
@@ -37,10 +40,16 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className={styles.inputField}
             required
           />
-          <button type="submit">Login</button>
+          <button type="submit" className={styles.submitButton}>
+            Login
+          </button>
         </form>
+        <div className={styles.registerPrompt}>
+          Already have an account? <span className={styles.registerLink} onClick={() => navigate("/register")}>Register</span>
+        </div>
       </div>
     </div>
   );

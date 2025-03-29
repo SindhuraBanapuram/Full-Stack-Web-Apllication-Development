@@ -11,6 +11,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+import sqlite3
 
 app = Flask(__name__)
 CORS(app)
@@ -52,6 +53,19 @@ class Wishlist(db.Model):
         self.name = name
         self.price = price
         self.image_url = image_url
+
+class Notification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    product_id = db.Column(db.String(100), nullable=False)
+    product_name = db.Column(db.String(255), nullable=False)
+    old_price = db.Column(db.Float, nullable=False)
+    new_price = db.Column(db.Float, nullable=False)
+    timestamp = db.Column(db.DateTime, default=datetime.utcnow)
+    read = db.Column(db.Boolean, default=False)
+
+    def __repr__(self):
+        return f"<Notification {self.id} - {self.product_name}>"
 
 @app.route('/register', methods=['POST'])
 def register():
@@ -125,6 +139,57 @@ def get_wishlist():
         }
         for item in wishlist_items
     ]), 200
+
+@app.route('/wishlist/<string:product_id>', methods=['DELETE', 'OPTIONS'])
+def wishlist_item(product_id):
+    if request.method == 'OPTIONS':
+        response = jsonify({'message': 'Preflight accepted'})
+        response.headers.add('Access-Control-Allow-Methods', 'DELETE')
+        return response
+    
+    if request.method == 'DELETE':
+        conn = sqlite3.connect('your_database.db')
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM wishlist WHERE id = ?", (product_id,))
+        conn.commit()
+        conn.close()
+        
+        if cursor.rowcount == 0:
+            return jsonify({"error": "Product not found"}), 404
+        return jsonify({"message": "Item deleted"}), 200
+
+@app.route('/notifications', methods=['GET'])
+def get_notifications():
+    try:
+        notifications = Notification.query.order_by(Notification.timestamp.desc()).limit(50).all()
+        
+        return jsonify([{
+            'id': n.id,
+            'product_id': n.product_id,
+            'product_name': n.product_name,
+            'old_price': n.old_price,
+            'new_price': n.new_price,
+            'timestamp': n.timestamp.isoformat(),
+            'read': n.read
+        } for n in notifications]), 200
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+@app.route('/notifications/mark-read', methods=['POST'])
+def mark_notifications_read():
+    try:
+        Notification.query.update({'read': True})
+        db.session.commit()
+        
+        return jsonify({
+            'message': 'All notifications marked as read',
+            'count': Notification.query.count()
+        }), 200
+        
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': str(e)}), 500
+
 def scrape_products():
     print("Starting Amazon scrape...")
     try:
@@ -195,26 +260,43 @@ def scrape_products():
         print(f"Scraping failed: {e}")
         return []
 
-
 def check_price_drops():
     print("Checking for price drops...")
     wishlisted_products = Wishlist.query.all()
 
-    for wishlist in wishlisted_products:
-        product = Product.query.get(wishlist.product_id)
+    for wishlist_item in wishlisted_products:
+        product = Product.query.filter_by(id=wishlist_item.product_id).first()
         if not product:
             continue
-        headers = {"User-Agent": "Mozilla/5.0"}
-        response = requests.get(product.url, headers=headers)
-        soup = BeautifulSoup(response.content, "html.parser")
-        price_element = soup.find("span", class_="a-price-whole")
+            
+        try:
+            headers = {"User-Agent": "Mozilla/5.0"}
+            response = requests.get(product.url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, "html.parser")
+            price_element = soup.find("span", class_="a-price-whole")
+            price_fraction = soup.find("span", class_="a-price-fraction")
 
-        if price_element:
-            new_price = float(price_element.text.replace(",", ""))
-            if new_price < product.price:
-                print(f"Price Drop Alert! {product.name} - New Price: ₹{new_price}, Old Price: ₹{product.price}")
-                product.price = new_price
-                db.session.commit()
+            if price_element and price_fraction:
+                new_price = float(f"{price_element.text.replace(',','')}.{price_fraction.text}")
+                
+                if new_price < product.price:
+                    print(f"Price Drop Alert! {product.name} - New: ${new_price}, Old: ${product.price}")
+                    
+                    notification = Notification(
+                        user_id=wishlist_item.user_id,
+                        product_id=product.id,
+                        product_name=product.name,
+                        old_price=product.price,
+                        new_price=new_price
+                    )
+                    db.session.add(notification)
+                    product.price = new_price
+                    db.session.commit()
+                    
+        except Exception as e:
+            print(f"Error checking price for {product.name}: {str(e)}")
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(check_price_drops, 'interval', hours=1)
