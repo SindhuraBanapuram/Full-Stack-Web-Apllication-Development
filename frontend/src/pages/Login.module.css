@@ -92,7 +92,6 @@
   color: #4338ca;
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -103,8 +102,6 @@
     transform: translateY(0);
   }
 }
-
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .loginBox {
     padding: 1.8rem;

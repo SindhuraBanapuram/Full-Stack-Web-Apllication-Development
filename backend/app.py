@@ -3,26 +3,34 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 from flask_cors import CORS
+from apscheduler.jobstores.base import ConflictingIdError
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
+from apscheduler.events import EVENT_JOB_ADDED, EVENT_JOB_REMOVED
 from apscheduler.schedulers.background import BackgroundScheduler
 from bs4 import BeautifulSoup
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 import sqlite3
+import logging
+import os
+os.environ['TZ'] = 'UTC'
 
 app = Flask(__name__)
 CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['JWT_SECRET_KEY'] = 'your_secret_key'
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
+
+REQUEST_TIMEOUT = 15 
+PRICE_CHANGE_THRESHOLD = 0.01
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -140,23 +148,20 @@ def get_wishlist():
         for item in wishlist_items
     ]), 200
 
-@app.route('/wishlist/<string:product_id>', methods=['DELETE', 'OPTIONS'])
-def wishlist_item(product_id):
-    if request.method == 'OPTIONS':
-        response = jsonify({'message': 'Preflight accepted'})
-        response.headers.add('Access-Control-Allow-Methods', 'DELETE')
-        return response
+@app.route('/wishlist/<product_id>', methods=['DELETE'])
+def delete_from_wishlist(product_id):
+    print(f"Trying to delete product_id: {product_id}")
+    wishlist_item = Wishlist.query.filter_by(product_id=product_id).first()
     
-    if request.method == 'DELETE':
-        conn = sqlite3.connect('your_database.db')
-        cursor = conn.cursor()
-        cursor.execute("DELETE FROM wishlist WHERE id = ?", (product_id,))
-        conn.commit()
-        conn.close()
-        
-        if cursor.rowcount == 0:
-            return jsonify({"error": "Product not found"}), 404
-        return jsonify({"message": "Item deleted"}), 200
+    if not wishlist_item:
+        print("Product not found in wishlist!") 
+        return jsonify({"error": "Product not found"}), 404
+    
+    db.session.delete(wishlist_item)
+    db.session.commit()
+
+    return jsonify({"message": "Product removed from wishlist"})
+
 
 @app.route('/notifications', methods=['GET'])
 def get_notifications():
@@ -175,6 +180,7 @@ def get_notifications():
         
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 @app.route('/notifications/mark-read', methods=['POST'])
 def mark_notifications_read():
     try:
@@ -193,7 +199,7 @@ def mark_notifications_read():
 def scrape_products():
     print("Starting Amazon scrape...")
     try:
-        URL = "https://www.amazon.com/s?k=phones&language=en_US&crid=3A15I2OVN30B3&currency=INR&sprefix=phones%2Caps%2C384&ref=nb_sb_noss_1"
+        URL = "https://www.amazon.com/s?k=phones&language=en_EN&crid=3A15I2OVN30B3&currency=INR&sprefix=phones%2Caps%2C384&ref=nb_sb_noss_1"
         HEADERS = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             'Accept-Language': 'en-US, en;q=0.5',
@@ -260,53 +266,117 @@ def scrape_products():
         print(f"Scraping failed: {e}")
         return []
 
+def get_current_price(url):
+    try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+            "Accept-Language": "en-US,en;q=0.9"
+        }
+        response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+        
+        soup = BeautifulSoup(response.content, "html.parser")
+        price_whole = soup.find("span", class_="a-price-whole")
+        price_fraction = soup.find("span", class_="a-price-fraction")
+        
+        return parse_amazon_price(price_whole, price_fraction)
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Request failed for {url}: {str(e)}")
+        return None
+    except Exception as e:
+        logging.error(f"Failed to get price from {url}: {str(e)}")
+        return None
+
+def notify_price_change(product, new_price):
+    try:
+        with app.app_context():
+            notification = Notification(
+                user_id=product.user_id,
+                product_id=product.id,
+                old_price=product.price,
+                new_price=new_price
+            )
+            product.price = new_price
+            product.last_updated = datetime.now(timezone.utc)
+            db.session.add(notification)
+            db.session.commit()
+            logging.info(f"Price changed for product {product.id}: {product.price} -> {new_price}")
+    except Exception as e:
+        logging.error(f"Error saving notification: {str(e)}")
+
+def clean_price_text(price_text):
+    if not price_text:
+        return None
+    cleaned = re.sub(r'[^\d.]', '', price_text.strip())
+    parts = cleaned.split('.')
+    if len(parts) > 1:
+        cleaned = f"{parts[0]}.{''.join(parts[1:])}"
+    return cleaned if cleaned else None
+
 def check_price_drops():
-    print("Checking for price drops...")
-    wishlisted_products = Wishlist.query.all()
-
-    for wishlist_item in wishlisted_products:
-        product = Product.query.filter_by(id=wishlist_item.product_id).first()
-        if not product:
-            continue
-            
+    with app.app_context():
+        start_time = datetime.now(timezone.utc)
+        logging.info(f"Starting price check at {start_time.isoformat()}")
         try:
-            headers = {"User-Agent": "Mozilla/5.0"}
-            response = requests.get(product.url, headers=headers, timeout=10)
-            response.raise_for_status()
+            stale_threshold = datetime.now(timezone.utc) - timedelta(hours=1)
+            products_to_check = Product.query.filter(Product.last_updated < stale_threshold).limit(50).all()
+            if not products_to_check:
+                logging.info("No stale products found to check")
+                return
             
-            soup = BeautifulSoup(response.content, "html.parser")
-            price_element = soup.find("span", class_="a-price-whole")
-            price_fraction = soup.find("span", class_="a-price-fraction")
-
-            if price_element and price_fraction:
-                new_price = float(f"{price_element.text.replace(',','')}.{price_fraction.text}")
-                
-                if new_price < product.price:
-                    print(f"Price Drop Alert! {product.name} - New: ${new_price}, Old: ${product.price}")
-                    
-                    notification = Notification(
-                        user_id=wishlist_item.user_id,
-                        product_id=product.id,
-                        product_name=product.name,
-                        old_price=product.price,
-                        new_price=new_price
-                    )
-                    db.session.add(notification)
-                    product.price = new_price
-                    db.session.commit()
-                    
+            for product in products_to_check:
+                try:
+                    time.sleep(random.uniform(1, 3))
+                    current_price = get_current_price(product.url)
+                    if current_price is None:
+                        continue
+                    if abs(current_price - product.price) > (product.price * PRICE_CHANGE_THRESHOLD):
+                        notify_price_change(product, current_price)
+                except Exception as e:
+                    logging.error(f"Error checking product {product.id}: {str(e)}")
         except Exception as e:
-            print(f"Error checking price for {product.name}: {str(e)}")
+            logging.error(f"Price check job failed: {str(e)}", exc_info=True)
+        finally:
+            duration = (datetime.now(timezone.utc) - start_time).total_seconds()
+            logging.info(f"Price check completed in {duration:.2f} seconds")
 
-scheduler = BackgroundScheduler()
-scheduler.add_job(check_price_drops, 'interval', hours=1)
-scheduler.start()
+def parse_amazon_price(price_whole, price_fraction):
+    try:
+        whole_cleaned = clean_price_text(price_whole.text if price_whole else "")
+        fraction_cleaned = clean_price_text(price_fraction.text if price_fraction else "")
+        if not whole_cleaned:
+            return None
+        price_str = whole_cleaned + (f".{fraction_cleaned[:2]}" if fraction_cleaned else "")
+        return float(price_str) if re.match(r'^\d+\.?\d*$', price_str) else None
+    except (AttributeError, ValueError, TypeError) as e:
+        logging.error(f"Price parsing error: {str(e)}")
+        return None
+
+def create_scheduler():
+    jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')}
+    scheduler = BackgroundScheduler(jobstores=jobstores, timezone="UTC", job_defaults={'coalesce': True, 'max_instances': 1, 'misfire_grace_time': 60})
+    scheduler.add_job(func=check_price_drops, trigger='interval', minutes=30, id='price_check_job', replace_existing=True)
+    return scheduler
+
+def job_listener(event):
+    if event.code == EVENT_JOB_ADDED:
+        logging.info(f"Job added: {event.job_id}")
+    elif event.code == EVENT_JOB_REMOVED:
+        logging.info(f"Job removed: {event.job_id}")
+
+scheduler = create_scheduler()
+scheduler.add_listener(job_listener, EVENT_JOB_ADDED | EVENT_JOB_REMOVED)
 
 if __name__ == '__main__':
     with app.app_context():
-        db.drop_all()  
         db.create_all()
-        print("Database tables created successfully!")
-        print("Running initial scrape...")
-        scrape_products()
-        app.run(debug=True)
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s', handlers=[logging.FileHandler('scheduler.log'), logging.StreamHandler()])
+        scheduler = create_scheduler()
+        if os.environ.get('WERKZEUG_RUN_MAIN') == 'true' or not app.debug:
+            scheduler.start()
+            logging.info("Scheduler started with jobs: %s", scheduler.get_jobs())
+            try:
+                app.run(debug=True, use_reloader=True)
+            finally:
+                scheduler.shutdown()
+                logging.info("Scheduler shut down")

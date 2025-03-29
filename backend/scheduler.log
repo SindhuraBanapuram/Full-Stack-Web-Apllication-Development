@@ -1,0 +1,158 @@
+2025-03-29 12:04:26,502 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:04:26,533 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:04:26,533 [INFO] Scheduler started
+2025-03-29 12:04:26,542 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:04:26,562 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-29 12:04:26,562 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-29 12:04:26,566 [INFO]  * Restarting with stat
+2025-03-29 12:04:27,754 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:04:27,762 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:04:27,762 [INFO] Scheduler started
+2025-03-29 12:04:27,768 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:04:27,777 [WARNING]  * Debugger is active!
+2025-03-29 12:04:27,780 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:04:47,162 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:47] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:04:47,404 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:47] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:04:48,602 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:48] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-29 12:04:48,611 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:48] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
+2025-03-29 12:04:51,477 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:51] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:04:51,791 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:51] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:04:59,952 [INFO] 127.0.0.1 - - [29/Mar/2025 12:04:59] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:05:00,186 [INFO] 127.0.0.1 - - [29/Mar/2025 12:05:00] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:05:20,688 [INFO]  * Detected change in 'C:\\Users\\Sindhu\\OneDrive\\Desktop\\price-drop\\backend\\app.py', reloading
+2025-03-29 12:05:20,688 [INFO] Scheduler has been shut down
+2025-03-29 12:05:20,692 [INFO] Scheduler shut down
+2025-03-29 12:05:20,844 [INFO]  * Restarting with stat
+2025-03-29 12:05:21,898 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:05:21,905 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:05:21,905 [INFO] Scheduler started
+2025-03-29 12:05:21,910 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:05:21,921 [WARNING]  * Debugger is active!
+2025-03-29 12:05:21,924 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:06:22,113 [INFO] Scheduler has been shut down
+2025-03-29 12:06:22,116 [INFO] Scheduler shut down
+2025-03-29 12:06:22,398 [INFO] Scheduler has been shut down
+2025-03-29 12:06:22,401 [INFO] Scheduler shut down
+2025-03-29 12:06:25,247 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:06:25,263 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:06:25,263 [INFO] Scheduler started
+2025-03-29 12:06:25,265 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:06:25,280 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-29 12:06:25,282 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-29 12:06:25,282 [INFO]  * Restarting with stat
+2025-03-29 12:06:26,459 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:06:26,460 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:06:26,460 [INFO] Scheduler started
+2025-03-29 12:06:26,475 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:06:26,485 [WARNING]  * Debugger is active!
+2025-03-29 12:06:26,487 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:06:32,187 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:32] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:32,428 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:32] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:34,058 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:34] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:34,126 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:34] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
+2025-03-29 12:06:36,991 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:36] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:37,318 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:37] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:43,629 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:43] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:44,045 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:44] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:44,148 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:44] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:44,456 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:44] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:06:46,399 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:46,671 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:46,707 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:46,875 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:46,990 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:06:54,838 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:54] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:06:54,856 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:54] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:06:55,967 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:55] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:06:56,234 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:56] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:06:56,288 [INFO] 127.0.0.1 - - [29/Mar/2025 12:06:56] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:07:01,516 [INFO] 127.0.0.1 - - [29/Mar/2025 12:07:01] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:07:01,532 [INFO] 127.0.0.1 - - [29/Mar/2025 12:07:01] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:07:02,074 [INFO] 127.0.0.1 - - [29/Mar/2025 12:07:02] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:07:02,347 [INFO] 127.0.0.1 - - [29/Mar/2025 12:07:02] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:11:42,354 [INFO] Scheduler has been shut down
+2025-03-29 12:11:42,356 [INFO] Scheduler shut down
+2025-03-29 12:11:42,616 [INFO] Scheduler has been shut down
+2025-03-29 12:11:42,618 [INFO] Scheduler shut down
+2025-03-29 12:11:46,101 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:11:46,105 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:11:46,105 [INFO] Scheduler started
+2025-03-29 12:11:46,115 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:11:46,140 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-29 12:11:46,141 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-29 12:11:46,142 [INFO]  * Restarting with stat
+2025-03-29 12:11:47,179 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:11:47,191 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:11:47,191 [INFO] Scheduler started
+2025-03-29 12:11:47,196 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:11:47,207 [WARNING]  * Debugger is active!
+2025-03-29 12:11:47,212 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:11:57,674 [INFO] 127.0.0.1 - - [29/Mar/2025 12:11:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:11:57,920 [INFO] 127.0.0.1 - - [29/Mar/2025 12:11:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 12:11:58,742 [INFO] 127.0.0.1 - - [29/Mar/2025 12:11:58] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:11:59,055 [INFO] 127.0.0.1 - - [29/Mar/2025 12:11:59] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:11:59,892 [INFO] 127.0.0.1 - - [29/Mar/2025 12:11:59] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:12:00,154 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:00] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:12:00,631 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:00] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:12:00,964 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:00] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:12:02,573 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:02] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:12:02,820 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:02] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:12:03,650 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:03] "OPTIONS /wishlist/3mtxr1far HTTP/1.1" 200 -
+2025-03-29 12:12:03,986 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:03] "[33mDELETE /wishlist/3mtxr1far HTTP/1.1[0m" 404 -
+2025-03-29 12:12:55,335 [INFO]  * Detected change in 'C:\\Users\\Sindhu\\OneDrive\\Desktop\\price-drop\\backend\\app.py', reloading
+2025-03-29 12:12:55,337 [INFO] Scheduler has been shut down
+2025-03-29 12:12:55,338 [INFO] Scheduler shut down
+2025-03-29 12:12:55,521 [INFO]  * Restarting with stat
+2025-03-29 12:12:56,781 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:12:56,789 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:12:56,789 [INFO] Scheduler started
+2025-03-29 12:12:56,793 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:12:56,804 [WARNING]  * Debugger is active!
+2025-03-29 12:12:56,806 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:12:58,474 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:58] "OPTIONS /wishlist/3mtxr1far HTTP/1.1" 200 -
+2025-03-29 12:12:58,744 [INFO] 127.0.0.1 - - [29/Mar/2025 12:12:58] "[33mDELETE /wishlist/3mtxr1far HTTP/1.1[0m" 404 -
+2025-03-29 12:14:33,995 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:33] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:14:34,234 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:34] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:14:35,151 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:35] "OPTIONS /wishlist/1 HTTP/1.1" 200 -
+2025-03-29 12:14:35,496 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:35] "DELETE /wishlist/1 HTTP/1.1" 200 -
+2025-03-29 12:14:36,624 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:36] "OPTIONS /wishlist/3 HTTP/1.1" 200 -
+2025-03-29 12:14:36,952 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:36] "DELETE /wishlist/3 HTTP/1.1" 200 -
+2025-03-29 12:14:44,006 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:44] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:14:44,333 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:44] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:14:45,474 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:45] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:14:45,738 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:45] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 12:14:50,731 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:50] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:14:51,053 [INFO] 127.0.0.1 - - [29/Mar/2025 12:14:51] "GET /products HTTP/1.1" 200 -
+2025-03-29 12:16:34,322 [INFO]  * Detected change in 'C:\\Users\\Sindhu\\OneDrive\\Desktop\\price-drop\\backend\\app.py', reloading
+2025-03-29 12:16:34,324 [INFO] Scheduler has been shut down
+2025-03-29 12:16:34,326 [INFO] Scheduler shut down
+2025-03-29 12:16:34,545 [INFO]  * Restarting with stat
+2025-03-29 12:16:35,789 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:16:35,793 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:16:35,793 [INFO] Scheduler started
+2025-03-29 12:16:35,801 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:16:35,810 [WARNING]  * Debugger is active!
+2025-03-29 12:16:35,815 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:16:41,995 [INFO]  * Detected change in 'C:\\Users\\Sindhu\\OneDrive\\Desktop\\price-drop\\backend\\app.py', reloading
+2025-03-29 12:16:41,995 [INFO] Scheduler has been shut down
+2025-03-29 12:16:41,995 [INFO] Scheduler shut down
+2025-03-29 12:16:42,209 [INFO]  * Restarting with stat
+2025-03-29 12:16:43,383 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:16:43,383 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:16:43,383 [INFO] Scheduler started
+2025-03-29 12:16:43,402 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:16:43,410 [WARNING]  * Debugger is active!
+2025-03-29 12:16:43,410 [INFO]  * Debugger PIN: 125-110-483
+2025-03-29 12:17:08,420 [INFO]  * Detected change in 'C:\\Users\\Sindhu\\OneDrive\\Desktop\\price-drop\\backend\\app.py', reloading
+2025-03-29 12:17:08,420 [INFO] Scheduler has been shut down
+2025-03-29 12:17:08,420 [INFO] Scheduler shut down
+2025-03-29 12:17:08,642 [INFO]  * Restarting with stat
+2025-03-29 12:17:09,896 [INFO] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-03-29 12:17:09,915 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 12:17:09,915 [INFO] Scheduler started
+2025-03-29 12:17:09,918 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 12:17:09,918 [WARNING]  * Debugger is active!
+2025-03-29 12:17:09,929 [INFO]  * Debugger PIN: 125-110-483

@@ -90,7 +90,6 @@
 .loginLink:hover {
   color: #4338ca;
 }
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -102,7 +101,6 @@
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .form {
     padding: 1.8rem;

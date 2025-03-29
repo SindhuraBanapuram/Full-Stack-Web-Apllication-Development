@@ -13,7 +13,7 @@ const Wishlist = () => {
         const response = await axios.get("http://localhost:5000/wishlist");
         const validatedWishlist = response.data.map(item => ({
           ...item,
-          id: item.id || item._id || Math.random().toString(36).substr(2, 9) 
+          id: item.product_id || item._id || Math.random().toString(36).substr(2, 9) 
         }));
         setWishlist(validatedWishlist);
       } catch (err) {
@@ -35,7 +35,7 @@ const Wishlist = () => {
     }
 
     try {
-      console.log("Deleting product with ID:", productId); // Debug log
+      console.log("Deleting product with ID:", productId); 
       await axios.delete(`http://localhost:5000/wishlist/${productId}`);
       setWishlist(prev => prev.filter(item => item.id !== productId));
     } catch (err) {
