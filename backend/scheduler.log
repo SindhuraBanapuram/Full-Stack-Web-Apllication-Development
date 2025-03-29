@@ -314,3 +314,275 @@ NameError: name 'get_current_price' is not defined
 2025-03-29 15:59:54,751 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:54] "DELETE /wishlist/8 HTTP/1.1" 200 -
 2025-03-29 15:59:55,309 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:55] "OPTIONS /wishlist/9 HTTP/1.1" 200 -
 2025-03-29 15:59:55,643 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:55] "DELETE /wishlist/9 HTTP/1.1" 200 -
+2025-03-29 16:10:07,426 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:07] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:07,691 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:07] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:09,334 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:09] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:09,665 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:09] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:11,125 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:11,398 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:11,445 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:12,974 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:12] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:12,981 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:12] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:14,024 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:14] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:10:14,299 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:14] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:10:16,890 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:16] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:16,926 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:16] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-29 16:10:19,836 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:19] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:20,144 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:20] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:10:21,386 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:21] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:10:21,653 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:21] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:13:25,609 [INFO] 127.0.0.1 - - [29/Mar/2025 16:13:25] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:13:25,880 [INFO] 127.0.0.1 - - [29/Mar/2025 16:13:25] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:14:36,850 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:36] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:14:37,120 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:37] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:14:37,891 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:37] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:14:38,224 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:38] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:14:40,506 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:40] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-29 16:14:40,537 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:40] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-29 16:14:43,825 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:43] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:14:44,083 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:44] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:14:45,828 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:45] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:14:46,140 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:46] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:07,874 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:07] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:08,146 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:08] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:15,349 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:15] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:15,678 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:15] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:48,203 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:48,451 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:48,627 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:23:48,944 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:24:08,895 [INFO] 127.0.0.1 - - [29/Mar/2025 16:24:08] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:24:09,105 [INFO] 127.0.0.1 - - [29/Mar/2025 16:24:09] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:26:57,137 [INFO] 127.0.0.1 - - [29/Mar/2025 16:26:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:26:57,402 [INFO] 127.0.0.1 - - [29/Mar/2025 16:26:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:03,747 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:03] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:04,065 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:04] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:04,897 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:04] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,120 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,203 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,379 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,436 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,562 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,574 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:05,746 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:06,103 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:06] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:27:06,226 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:06] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:28:45,474 [INFO] Running job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 16:58:45 UTC)" (scheduled at 2025-03-29 16:28:45.462937+00:00)
+2025-03-29 16:28:45,493 [ERROR] Job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 16:58:45 UTC)" raised an exception
+Traceback (most recent call last):
+  File "C:\Users\Sindhu\AppData\Roaming\Python\Python312\site-packages\apscheduler\executors\base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 283, in check_price_drops
+    product = Product.query.get(wishlist_item.product_id)
+                    ^^^^^^^^^^^^^^^^^
+NameError: name 'get_current_price' is not defined
+2025-03-29 16:33:20,003 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:20] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:20,121 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:20] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:32,934 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:32] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:33:33,258 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:33] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:33:34,222 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:34] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:33:34,484 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:34] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:33:38,472 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:38,795 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:42,259 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:42,573 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:42,788 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:42,884 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:42,987 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:53,864 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:53] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:33:53,874 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:53] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:35:25,321 [INFO] 127.0.0.1 - - [29/Mar/2025 16:35:25] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:35:25,581 [INFO] 127.0.0.1 - - [29/Mar/2025 16:35:25] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:11,036 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:11,198 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:11,362 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:21,179 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:21] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:21,187 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:21] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:25,811 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:25] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:26,063 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:26] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:30,461 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:30] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:38:30,787 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:30] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:38:31,808 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:31] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:38:32,078 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:32] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 16:38:36,489 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:36] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:36,805 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:36] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:38,064 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:38:38,324 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:39:12,374 [INFO] Scheduler has been shut down
+2025-03-29 16:39:12,385 [INFO] Scheduler shut down
+2025-03-29 16:39:16,690 [INFO] Scheduler created successfully.
+2025-03-29 16:39:16,712 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-29 16:39:16,712 [INFO] Scheduler started
+2025-03-29 16:39:16,723 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-29 16:39:16,762 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-29 16:39:16,774 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-29 16:39:35,654 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:35] "[33mGET /notification HTTP/1.1[0m" 404 -
+2025-03-29 16:39:47,536 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:47] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:39:47,783 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:47] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:39:58,259 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:58] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:40:09,807 [INFO] 127.0.0.1 - - [29/Mar/2025 16:40:09] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:41:50,182 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:50] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:41:50,436 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:50] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:41:53,561 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:53] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:42:17,832 [INFO] 127.0.0.1 - - [29/Mar/2025 16:42:17] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:43:31,381 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:31] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:43:31,626 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:31] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:43:36,349 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:36] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:43:58,983 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:58] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:45:56,131 [INFO] 127.0.0.1 - - [29/Mar/2025 16:45:56] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:46:03,130 [INFO] 127.0.0.1 - - [29/Mar/2025 16:46:03] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:46:11,452 [INFO] 127.0.0.1 - - [29/Mar/2025 16:46:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:50:42,894 [INFO] 127.0.0.1 - - [29/Mar/2025 16:50:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:51:48,453 [INFO] 127.0.0.1 - - [29/Mar/2025 16:51:48] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:53:43,085 [INFO] 127.0.0.1 - - [29/Mar/2025 16:53:43] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:53:51,786 [INFO] 127.0.0.1 - - [29/Mar/2025 16:53:51] "GET /products HTTP/1.1" 200 -
+2025-03-29 16:54:03,760 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:03] "[33mGET /home HTTP/1.1[0m" 404 -
+2025-03-29 16:54:13,866 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:13] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-29 16:54:28,376 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:28] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 16:58:11,866 [INFO] 127.0.0.1 - - [29/Mar/2025 16:58:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 16:59:21,253 [INFO] 127.0.0.1 - - [29/Mar/2025 16:59:21] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:01:20,581 [INFO] 127.0.0.1 - - [29/Mar/2025 17:01:20] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:01:24,950 [INFO] 127.0.0.1 - - [29/Mar/2025 17:01:24] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:03:13,007 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:13] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:03:30,780 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:30] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:03:31,045 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:31] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:06:47,584 [INFO] 127.0.0.1 - - [29/Mar/2025 17:06:47] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:09:16,698 [INFO] Running job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 17:09:16 UTC)" (scheduled at 2025-03-29 17:09:16.690648+00:00)
+2025-03-29 17:09:16,698 [INFO] Checking for price drops at 2025-03-29 17:09:16.698510+00:00...
+2025-03-29 17:09:16,720 [INFO] Discount Applied! SAMSUNG Galaxy A16 5G A Series Cell Phone, Unlocked Android Smartphone, Large AMOLED Display, Durable Design, Super Fast Charging, Expandable Storage, US Version, 2025, Blue Black: Old = 174.99, New = 157.49
+2025-03-29 17:09:16,740 [ERROR] Job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 17:39:16 UTC)" raised an exception
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: NOT NULL constraint failed: notification.product_name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 321, in check_price_drops
+    product_id=product.id,
+    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
+    return self._proxied.commit()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
+    self._flush(objects)
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
+    with util.safe_reraise():
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
+    flush_context.execute()
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
+    result = connection.execute(
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: notification.product_name
+[SQL: INSERT INTO notification (user_id, product_id, product_name, old_price, new_price, timestamp, read) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 3, None, 174.99, 157.49, '2025-03-29 17:09:16.726265', 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Sindhu\AppData\Roaming\Python\Python312\site-packages\apscheduler\executors\base.py", line 131, in run_job
+    retval = job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 326, in check_price_drops
+    )
+      
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 566, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1086, in get
+    value = self._fire_loader_callables(state, key, passive)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1116, in _fire_loader_callables
+    return state._load_expired(state, passive)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state.py", line 803, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 1670, in load_scalar_attributes
+    result = load_on_ident(
+             ^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 509, in load_on_ident
+    return load_on_pk_identity(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
+    session.execute(
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in _connection_for_bind
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
+    self._raise_for_prerequisite_state(fn.__name__, current_state)
+  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.IntegrityError) NOT NULL constraint failed: notification.product_name
+[SQL: INSERT INTO notification (user_id, product_id, product_name, old_price, new_price, timestamp, read) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 3, None, 174.99, 157.49, '2025-03-29 17:09:16.726265', 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
+2025-03-29 17:09:26,190 [INFO] 127.0.0.1 - - [29/Mar/2025 17:09:26] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:11:05,516 [INFO] 127.0.0.1 - - [29/Mar/2025 17:11:05] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:12:21,389 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:21] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
+2025-03-29 17:12:46,192 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:46] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:46,449 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:46] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:47,116 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:47] "GET /products HTTP/1.1" 200 -
+2025-03-29 17:12:47,439 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:47] "GET /products HTTP/1.1" 200 -
+2025-03-29 17:12:48,481 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:48] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 17:12:48,725 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:48] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 17:12:49,400 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:49] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:49,722 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:49] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:51,100 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:51] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:51,358 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:51] "GET /notifications HTTP/1.1" 200 -
+2025-03-29 17:12:53,047 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:53] "GET /wishlist HTTP/1.1" 200 -
+2025-03-29 17:12:53,379 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:53] "GET /wishlist HTTP/1.1" 200 -

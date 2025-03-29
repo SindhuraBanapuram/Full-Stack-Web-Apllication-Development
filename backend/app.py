@@ -17,6 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import sqlite3
 import logging
 import secrets
+import sys
 import os
 os.environ['TZ'] = 'UTC'
 
@@ -74,7 +75,6 @@ class Notification(db.Model):
     new_price = db.Column(db.Float, nullable=False)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     read = db.Column(db.Boolean, default=False)
-
     def __repr__(self):
         return f"<Notification {self.id} - {self.product_name}>"
 
@@ -165,39 +165,54 @@ def delete_from_wishlist(product_id):
 
     return jsonify({"message": "Product removed from wishlist"})
 
+from flask import request, jsonify
+from datetime import datetime
 
 @app.route('/notifications', methods=['GET'])
 def get_notifications():
-    try:
-        notifications = Notification.query.order_by(Notification.timestamp.desc()).limit(50).all()
-        
-        return jsonify([{
-            'id': n.id,
-            'product_id': n.product_id,
-            'product_name': n.product_name,
-            'old_price': n.old_price,
-            'new_price': n.new_price,
-            'timestamp': n.timestamp.isoformat(),
-            'read': n.read
-        } for n in notifications]), 200
-        
-    except Exception as e:
-        return jsonify({'error': str(e)}), 500
+    notifications = Notification.query.all()
+    return jsonify([
+        {
+            "id": n.id,
+            "user_id": n.user_id,
+            "product_id": n.product_id,
+            "product_name": n.product_name,
+            "old_price": n.old_price,
+            "new_price": n.new_price,
+            "timestamp": n.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+            "image_url": n.image_url
+        }
+        for n in notifications
+    ])
 
-@app.route('/notifications/mark-read', methods=['POST'])
-def mark_notifications_read():
+@app.route('/notifications', methods=['POST'])
+def add_notification():
     try:
-        Notification.query.update({'read': True})
+        data = request.json 
+        if not data:
+            return jsonify({"error": "No data provided"}), 400
+
+        required_fields = ["user_id", "product_id", "product_name", "old_price", "new_price"]
+        for field in required_fields:
+            if field not in data or data[field] is None:
+                return jsonify({"error": f"Missing field: {field}"}), 400
+
+        new_notification = Notification(
+            user_id=data["user_id"],
+            product_id=data["product_id"],
+            product_name=data["product_name"],
+            old_price=data["old_price"],
+            new_price=data["new_price"],
+            image_url=data.get("image_url", ""),
+        )
+
+        db.session.add(new_notification)
         db.session.commit()
-        
-        return jsonify({
-            'message': 'All notifications marked as read',
-            'count': Notification.query.count()
-        }), 200
-        
+
+        return jsonify({"message": "Notification added successfully!"}), 201
+
     except Exception as e:
-        db.session.rollback()
-        return jsonify({'error': str(e)}), 500
+        return jsonify({"error": str(e)}), 500
 
 def scrape_products():
     print("Starting Amazon scrape...")
@@ -268,37 +283,65 @@ def scrape_products():
     except Exception as e:
         print(f"Scraping failed: {e}")
         return []
+
+
+def get_current_price(url):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    try:
+        response = requests.get(url, headers=headers)
+        response.raise_for_status()
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        price_element = soup.select_one("span.a-price-whole")
+        if price_element:
+            return float(price_element.text.replace(",", "").strip())
+
+        logging.warning(f"Price not found for {url}")
+        return None
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching price for {url}: {e}")
+        return None
 def check_price_drops():
-    """Check for price drops and notify users"""
     with app.app_context():
-        logging.info(f"🔍 Checking for price drops at {datetime.now(timezone.utc)}...")
+        logging.info("🔍 Running check_price_drops...")
+
         wishlisted_products = Wishlist.query.all()
+        logging.info(f"Total wishlisted products found: {len(wishlisted_products)}")
 
         for wishlist_item in wishlisted_products:
             product = Product.query.get(wishlist_item.product_id)
             if not product:
+                logging.warning(f"⚠️ Product {wishlist_item.product_id} not found!")
                 continue
 
             try:
-                new_price = get_current_price(product.url)
-                if new_price is not None and new_price < product.price:
-                    logging.info(f"📉 Price Drop for {product.name}: Old = {product.price}, New = {new_price}")
-                    
-                    # Notify user
+                new_price = get_current_price(product.url)  # Fetch actual price
+                if new_price is None:
+                    logging.warning(f"⚠️ Price not found for {product.name}")
+                    continue  # Skip if price couldn't be scraped
+
+                if new_price < product.price:  # Only save if price dropped
+                    logging.info(f"✅ Price Drop Detected for {product.name}! Old: {product.price}, New: {new_price}")
+
                     notification = Notification(
                         user_id=wishlist_item.user_id,
                         product_id=product.id,
+                        product_name=product.name,
                         old_price=product.price,
-                        new_price=new_price
+                        new_price=new_price,
+                        image_url=product.image_url
                     )
                     db.session.add(notification)
-                    db.session.commit()
-                    logging.info(f"Notification saved for {product.name} - New: {new_price}, Old: {product.price}")
+                    db.session.commit()  
 
-            except requests.exceptions.RequestException as e:
-                logging.error(f"❌ Request error for {product.name}: {str(e)}")
-                continue
+                    logging.info(f"✅ Notification saved for {product.name}")
 
+            except Exception as e:
+                db.session.rollback()
+                logging.error(f"❌ Error saving notification: {e}")
 
 def create_scheduler():
     jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')}
@@ -310,15 +353,24 @@ scheduler = create_scheduler()
 
 if __name__ == '__main__':
     with app.app_context():
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s', handlers=[logging.FileHandler('scheduler.log'), logging.StreamHandler()])
-        
+        db.create_all() 
+        logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("scheduler.log", encoding="utf-8"),
+        logging.StreamHandler(sys.stdout),
+    ],
+)
+
         logging.info("Scheduler created successfully.")
         if os.environ.get('WERKZEUG_RUN_MAIN') == 'true' or not app.debug:
             scheduler.start()
             logging.info("Scheduler started with jobs: %s", scheduler.get_jobs())
-            
+
             try:
                 app.run(debug=True, use_reloader=False)
             finally:
                 scheduler.shutdown()
                 logging.info("Scheduler shut down")
+        app.run(debug=True)
