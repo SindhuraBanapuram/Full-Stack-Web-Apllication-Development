@@ -3,9 +3,11 @@ background-color: #fff;
 display: flex;
 justify-content: space-around;
 align-items: center;
-padding: 15px 20px;
+justify-self: center;
+padding: 15px 10px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 border-radius: 10px;
+margin: 10px;
 }
 nav a {
   text-decoration: none;
