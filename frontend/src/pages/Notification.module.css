@@ -1,85 +1,82 @@
-.notificationContainer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  
-  .notificationBell {
-    background: #4a6fa5;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    transition: all 0.3s;
-  }
-  
-  .notificationBell:hover {
-    transform: scale(1.1);
-  }
-  
-  .badge {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #ff4757;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .notificationDropdown {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    width: 300px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    overflow: hidden;
-  }
-  
-  .notificationList {
-    max-height: 400px;
-    overflow-y: auto;
-  }
-  
-  .notificationItem {
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .notificationItem:last-child {
-    border-bottom: none;
-  }
-  
-  .notificationTitle {
-    margin: 0 0 5px 0;
-    font-weight: bold;
-  }
-  
-  .oldPrice {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
-  .newPrice {
-    color: #2ecc71;
-    font-weight: bold;
-  }
-  
-  .notificationTime {
-    margin: 5px 0 0 0;
-    font-size: 12px;
-    color: #888;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.error, .emptyMessage {
+  font-size: 1.2rem;
+  color: red;
+  margin-top: 20px;
+}
+.notificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.notificationCard {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.notificationCard:hover {
+  transform: scale(1.03);
+}
+
+.productImage {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.notificationContent {
+  flex: 1;
+  text-align: left;
+}
+
+.notificationContent h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #222;
+}
+
+.priceComparison {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: red;
+  font-weight: bold;
+}
+
+.newPrice {
+  color: green;
+  font-weight: bold;
+}
+
+.timestamp {
+  font-size: 0.9rem;
+  color: #666;
+}
