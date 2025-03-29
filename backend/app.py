@@ -265,6 +265,46 @@ def scrape_products():
     except Exception as e:
         print(f"Scraping failed: {e}")
         return []
+def check_price_drops():
+    """Check for price drops and notify users"""
+    with app.app_context():
+        try:
+            logging.info(f"🔍 Checking for price drops at {datetime.now(timezone.utc)}...")
+            wishlisted_products = Wishlist.query.all()
+
+            for wishlist_item in wishlisted_products:
+                product = Product.query.get(wishlist_item.product_id)
+                if not product:
+                    continue
+
+                try:
+                    new_price = get_current_price(product.url)
+                    
+                    if new_price is not None:
+                        logging.info(f"🔍 Checking Price Drop for {product.name}: Old = {product.price}, New = {new_price}")
+
+
+
+                        if new_price < product.price:
+                            logging.info(f"Price Drop Detected for {product.name}! Old: {product.price}, New: {new_price}")
+                            notification = Notification(
+                                user_id=wishlist_item.user_id,
+                                product_id=product.id,
+                                old_price=product.price,
+                                new_price=new_price
+                            )
+                            db.session.add(notification)
+                            product.price = new_price
+                            db.session.commit()
+                            logging.info(f"Notification saved for {product.name} - New: {new_price}, Old: {product.price}")
+
+                except requests.exceptions.RequestException as e:
+                    logging.error(f"Request error for {product.name}: {str(e)}")
+                    continue
+
+        except Exception as e:
+            logging.error(f"Error in price check job: {str(e)}")
+            db.session.rollback()
 
 def get_current_price(url):
     try:
@@ -272,73 +312,20 @@ def get_current_price(url):
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
             "Accept-Language": "en-US,en;q=0.9"
         }
-        response = requests.get(url, headers=headers, timeout=REQUEST_TIMEOUT)
+        response = requests.get(url, headers=headers, timeout=10)
         response.raise_for_status()
-        
+
         soup = BeautifulSoup(response.content, "html.parser")
         price_whole = soup.find("span", class_="a-price-whole")
         price_fraction = soup.find("span", class_="a-price-fraction")
-        
-        return parse_amazon_price(price_whole, price_fraction)
+
+        new_price = parse_amazon_price(price_whole, price_fraction)
+        logging.info(f"Extracted Price for {url}: {new_price}")  # Log fetched price
+        return new_price
     except requests.exceptions.RequestException as e:
         logging.error(f"Request failed for {url}: {str(e)}")
         return None
-    except Exception as e:
-        logging.error(f"Failed to get price from {url}: {str(e)}")
-        return None
 
-def notify_price_change(product, new_price):
-    try:
-        with app.app_context():
-            notification = Notification(
-                user_id=product.user_id,
-                product_id=product.id,
-                old_price=product.price,
-                new_price=new_price
-            )
-            product.price = new_price
-            product.last_updated = datetime.now(timezone.utc)
-            db.session.add(notification)
-            db.session.commit()
-            logging.info(f"Price changed for product {product.id}: {product.price} -> {new_price}")
-    except Exception as e:
-        logging.error(f"Error saving notification: {str(e)}")
-
-def clean_price_text(price_text):
-    if not price_text:
-        return None
-    cleaned = re.sub(r'[^\d.]', '', price_text.strip())
-    parts = cleaned.split('.')
-    if len(parts) > 1:
-        cleaned = f"{parts[0]}.{''.join(parts[1:])}"
-    return cleaned if cleaned else None
-
-def check_price_drops():
-    with app.app_context():
-        start_time = datetime.now(timezone.utc)
-        logging.info(f"Starting price check at {start_time.isoformat()}")
-        try:
-            stale_threshold = datetime.now(timezone.utc) - timedelta(hours=1)
-            products_to_check = Product.query.filter(Product.last_updated < stale_threshold).limit(50).all()
-            if not products_to_check:
-                logging.info("No stale products found to check")
-                return
-            
-            for product in products_to_check:
-                try:
-                    time.sleep(random.uniform(1, 3))
-                    current_price = get_current_price(product.url)
-                    if current_price is None:
-                        continue
-                    if abs(current_price - product.price) > (product.price * PRICE_CHANGE_THRESHOLD):
-                        notify_price_change(product, current_price)
-                except Exception as e:
-                    logging.error(f"Error checking product {product.id}: {str(e)}")
-        except Exception as e:
-            logging.error(f"Price check job failed: {str(e)}", exc_info=True)
-        finally:
-            duration = (datetime.now(timezone.utc) - start_time).total_seconds()
-            logging.info(f"Price check completed in {duration:.2f} seconds")
 
 def parse_amazon_price(price_whole, price_fraction):
     try:
@@ -352,31 +339,75 @@ def parse_amazon_price(price_whole, price_fraction):
         logging.error(f"Price parsing error: {str(e)}")
         return None
 
+def clean_price_text(price_text):
+    if not price_text:
+        return None
+    cleaned = re.sub(r'[^\d.]', '', price_text.strip())
+    return cleaned if cleaned else None
+
+def notify_price_change(product, new_price):
+    try:
+        notification = Notification(
+            user_id=wishlist_item.user_id,
+            product_id=product.id,
+            old_price=product.price,
+            new_price=new_price
+        )
+        db.session.add(notification)
+        db.session.commit()
+        logging.info(f"Notification saved for {product.name} - New: {new_price}, Old: {product.price}")  # ✅ Log save success
+    except Exception as e:
+        logging.error(f"Error saving notification: {str(e)}")
+        db.session.rollback()
+
+
+def check_price_drops():
+    with app.app_context():
+        print(f"Checking for price drops at {datetime.now(timezone.utc)}...")
+        try:
+            products_to_check = Product.query.filter(
+                Product.last_updated < datetime.now(timezone.utc) - timedelta(hours=1)
+            ).limit(50).all()
+            print(f"Found {len(products_to_check)} products to check.")
+            
+            for product in products_to_check:
+                try:
+                    time.sleep(random.uniform(1, 3))
+                    current_price = get_current_price(product.url)
+                    if current_price is None:
+                        continue
+                    print(f"Comparing prices for {product.name}: Old - {product.price}, New - {current_price}")
+                    if abs(current_price - product.price) > (product.price * PRICE_CHANGE_THRESHOLD):
+                        notify_price_change(product, current_price)
+                except Exception as e:
+                    logging.error(f"Error checking product {product.id}: {str(e)}")
+        except Exception as e:
+            logging.error(f"Price check job failed: {str(e)}", exc_info=True)
+
 def create_scheduler():
     jobstores = {'default': SQLAlchemyJobStore(url='sqlite:///jobs.sqlite')}
     scheduler = BackgroundScheduler(jobstores=jobstores, timezone="UTC", job_defaults={'coalesce': True, 'max_instances': 1, 'misfire_grace_time': 60})
     scheduler.add_job(func=check_price_drops, trigger='interval', minutes=30, id='price_check_job', replace_existing=True)
     return scheduler
 
-def job_listener(event):
-    if event.code == EVENT_JOB_ADDED:
-        logging.info(f"Job added: {event.job_id}")
-    elif event.code == EVENT_JOB_REMOVED:
-        logging.info(f"Job removed: {event.job_id}")
-
 scheduler = create_scheduler()
-scheduler.add_listener(job_listener, EVENT_JOB_ADDED | EVENT_JOB_REMOVED)
 
 if __name__ == '__main__':
     with app.app_context():
+        wishlist_items = Wishlist.query.all()
+        print(f"Total wishlisted items: {len(wishlist_items)}")
+
+
         db.create_all()
         logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s', handlers=[logging.FileHandler('scheduler.log'), logging.StreamHandler()])
-        scheduler = create_scheduler()
+        
+        logging.info("Scheduler created successfully.")
         if os.environ.get('WERKZEUG_RUN_MAIN') == 'true' or not app.debug:
             scheduler.start()
             logging.info("Scheduler started with jobs: %s", scheduler.get_jobs())
+            
             try:
-                app.run(debug=True, use_reloader=True)
+                app.run(debug=True, use_reloader=False)
             finally:
                 scheduler.shutdown()
                 logging.info("Scheduler shut down")
