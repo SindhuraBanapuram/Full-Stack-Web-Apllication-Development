@@ -1,588 +1,218 @@
-2025-03-29 14:49:40,201 [INFO] Scheduler created successfully.
-2025-03-29 14:49:40,230 [INFO] Added job "check_price_drops" to job store "default"
-2025-03-29 14:49:40,230 [INFO] Scheduler started
-2025-03-29 14:49:40,233 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
-2025-03-29 14:49:40,276 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-03-30 12:00:05,728 [INFO] Scheduler created successfully.
+2025-03-30 12:00:05,741 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:00:05,741 [INFO] Scheduler started
+2025-03-30 12:00:05,746 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:00:05,769 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-03-29 14:49:40,276 [INFO] [33mPress CTRL+C to quit[0m
-2025-03-29 14:54:53,715 [INFO] 127.0.0.1 - - [29/Mar/2025 14:54:53] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:54:53,977 [INFO] 127.0.0.1 - - [29/Mar/2025 14:54:53] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:54:58,364 [INFO] 127.0.0.1 - - [29/Mar/2025 14:54:58] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:54:58,683 [INFO] 127.0.0.1 - - [29/Mar/2025 14:54:58] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:55:00,954 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:00] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:55:01,203 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:01] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:55:02,460 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:02] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 14:55:02,494 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:02] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
-2025-03-29 14:55:09,465 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:09] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 14:55:09,782 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:09] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 14:55:12,330 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:12] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 14:55:12,592 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:12] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 14:55:14,230 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:14] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 14:55:14,553 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:14] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 14:55:16,991 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:16] "GET /products HTTP/1.1" 200 -
-2025-03-29 14:55:17,252 [INFO] 127.0.0.1 - - [29/Mar/2025 14:55:17] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:01:50,994 [INFO] 127.0.0.1 - - [29/Mar/2025 15:01:50] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:01:51,259 [INFO] 127.0.0.1 - - [29/Mar/2025 15:01:51] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
-2025-03-29 15:02:03,211 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:03] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:02:04,198 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:04] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
-2025-03-29 15:02:15,114 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:15] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:02:16,197 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:16] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
-2025-03-29 15:02:28,825 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:28] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:02:29,804 [INFO] 127.0.0.1 - - [29/Mar/2025 15:02:29] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
-2025-03-29 15:04:59,050 [INFO] 127.0.0.1 - - [29/Mar/2025 15:04:59] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:05:00,102 [INFO] 127.0.0.1 - - [29/Mar/2025 15:05:00] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
-2025-03-29 15:06:38,603 [INFO] 127.0.0.1 - - [29/Mar/2025 15:06:38] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:06:39,547 [INFO] 127.0.0.1 - - [29/Mar/2025 15:06:39] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
-2025-03-29 15:07:03,793 [INFO] Scheduler has been shut down
-2025-03-29 15:07:03,800 [INFO] Scheduler shut down
-2025-03-29 15:07:08,629 [INFO] Scheduler created successfully.
-2025-03-29 15:07:08,665 [INFO] Added job "check_price_drops" to job store "default"
-2025-03-29 15:07:08,665 [INFO] Scheduler started
-2025-03-29 15:07:08,668 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
-2025-03-29 15:07:08,729 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-03-30 12:00:05,769 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:00:34,159 [INFO] Scheduler has been shut down
+2025-03-30 12:00:34,163 [INFO] Scheduler shut down
+2025-03-30 12:00:34,172 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-03-29 15:07:08,730 [INFO] [33mPress CTRL+C to quit[0m
-2025-03-29 15:07:11,914 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:11] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:07:12,851 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:12] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:07:21,977 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:21] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:07:22,299 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:22] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:07:27,281 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:27] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:07:27,297 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:27] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
-2025-03-29 15:07:30,358 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:30] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:07:30,629 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:30] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:07:32,344 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:32] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:07:32,658 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:32] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:07:33,908 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:33] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:07:34,177 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:34] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:07:34,975 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:34] "OPTIONS /wishlist/1 HTTP/1.1" 200 -
-2025-03-29 15:07:35,353 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:35] "DELETE /wishlist/1 HTTP/1.1" 200 -
-2025-03-29 15:07:36,999 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:36] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:07:37,320 [INFO] 127.0.0.1 - - [29/Mar/2025 15:07:37] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:09:08,873 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:08] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:09:09,750 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:09] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:09:12,556 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:12] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:09:12,886 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:12] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:09:46,946 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:46] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:09:47,201 [INFO] 127.0.0.1 - - [29/Mar/2025 15:09:47] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:10:27,322 [INFO] 127.0.0.1 - - [29/Mar/2025 15:10:27] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:10:28,373 [INFO] 127.0.0.1 - - [29/Mar/2025 15:10:28] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:10:29,770 [INFO] 127.0.0.1 - - [29/Mar/2025 15:10:29] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:10:30,088 [INFO] 127.0.0.1 - - [29/Mar/2025 15:10:30] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:17:47,895 [INFO] 127.0.0.1 - - [29/Mar/2025 15:17:47] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:17:48,146 [INFO] 127.0.0.1 - - [29/Mar/2025 15:17:48] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:19:23,541 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:23] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:19:24,375 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:24] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:19:26,053 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:26] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:19:26,376 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:26] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:19:39,971 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:39] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:19:40,247 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:40] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:19:42,459 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:42] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:19:42,779 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:42] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:19:47,515 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:47] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:19:47,781 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:47] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:19:48,589 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:19:48,907 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:19:49,958 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:49] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:19:50,237 [INFO] 127.0.0.1 - - [29/Mar/2025 15:19:50] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:20:03,036 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:03] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:20:03,931 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:03] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:20:05,857 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:05] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:20:06,119 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:06] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:20:10,013 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:20:10,326 [INFO] 127.0.0.1 - - [29/Mar/2025 15:20:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:21:10,418 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:21:10,674 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:21:12,428 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:12] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:21:12,746 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:12] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:21:41,347 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:41] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:21:41,603 [INFO] 127.0.0.1 - - [29/Mar/2025 15:21:41] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:22:05,320 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:22:05,645 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:22:06,433 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:22:06,743 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:22:07,884 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:07] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:22:08,150 [INFO] 127.0.0.1 - - [29/Mar/2025 15:22:08] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:25:12,468 [INFO] 127.0.0.1 - - [29/Mar/2025 15:25:12] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:25:12,735 [INFO] 127.0.0.1 - - [29/Mar/2025 15:25:12] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:26:39,707 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:39] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:26:39,962 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:39] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:26:40,855 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:40] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:26:41,176 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:41] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:26:42,417 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:42] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:26:42,683 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:42] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:26:51,264 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:51] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:26:51,599 [INFO] 127.0.0.1 - - [29/Mar/2025 15:26:51] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:06,841 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:06] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:07,111 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:07] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:35,596 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:35] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:35,655 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:35] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:36,918 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:36] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:38,231 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:38] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:39,124 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:39] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:40,425 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:40] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:40,730 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:40] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:42,245 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:42] "OPTIONS /wishlist/4 HTTP/1.1" 200 -
-2025-03-29 15:27:42,516 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:42] "DELETE /wishlist/4 HTTP/1.1" 200 -
-2025-03-29 15:27:44,211 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:27:44,547 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:27:46,052 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:46] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:46,371 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:46] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:47,844 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:47] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:47,900 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:47] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:49,224 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:49] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:50,559 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:50] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:50,922 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:50] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:51,075 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:51] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:51,222 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:51] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:51,402 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:51] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:52,889 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:52] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:54,052 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:54,313 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:55,507 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:55] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:55,554 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:55] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:27:56,769 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:56] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:57,081 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:57] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:27:58,099 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:58] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:58,355 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:58] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:27:59,184 [INFO] 127.0.0.1 - - [29/Mar/2025 15:27:59] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:00,305 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:00] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:03,428 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:03] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:03,473 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:03] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:27,237 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:27] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:27,300 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:27] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:28,419 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:28] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:28,758 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:28] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:28,918 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:28] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:29,135 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:29] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:29,334 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:29] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:28:29,657 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:29] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:28:31,122 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:31] "[35m[1mPOST /wishlist HTTP/1.1[0m" 500 -
-2025-03-29 15:28:41,255 [INFO] Scheduler has been shut down
-2025-03-29 15:28:41,258 [INFO] Scheduler shut down
-2025-03-29 15:28:45,462 [INFO] Scheduler created successfully.
-2025-03-29 15:28:45,503 [INFO] Added job "check_price_drops" to job store "default"
-2025-03-29 15:28:45,509 [INFO] Scheduler started
-2025-03-29 15:28:45,509 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
-2025-03-29 15:28:45,564 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-03-30 12:00:34,172 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:00:34,175 [INFO]  * Restarting with stat
+2025-03-30 12:00:35,189 [INFO] Scheduler created successfully.
+2025-03-30 12:00:35,209 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:00:35,209 [INFO] Scheduler started
+2025-03-30 12:00:35,213 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:00:35,221 [WARNING]  * Debugger is active!
+2025-03-30 12:00:35,221 [INFO]  * Debugger PIN: 125-110-483
+2025-03-30 12:00:37,772 [INFO] Scheduler has been shut down
+2025-03-30 12:00:37,776 [INFO] Scheduler shut down
+2025-03-30 12:00:37,779 [WARNING]  * Debugger is active!
+2025-03-30 12:00:37,779 [INFO]  * Debugger PIN: 125-110-483
+2025-03-30 12:00:46,240 [INFO] Scheduler created successfully.
+2025-03-30 12:00:46,240 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:00:46,256 [INFO] Scheduler started
+2025-03-30 12:00:46,260 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:00:46,283 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-03-29 15:28:45,567 [INFO] [33mPress CTRL+C to quit[0m
-2025-03-29 15:28:48,893 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:48] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:48,962 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:48] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:28:52,061 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:52] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:52,322 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:52] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:54,095 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:28:54,418 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:28:55,857 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:55] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:28:55,906 [INFO] 127.0.0.1 - - [29/Mar/2025 15:28:55] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:29:07,613 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:07] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:29:07,889 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:07] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:29:08,754 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:08] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:29:09,068 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:09] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:29:24,432 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:24] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:29:24,662 [INFO] 127.0.0.1 - - [29/Mar/2025 15:29:24] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:30:05,250 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:05] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:30:05,572 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:05] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:30:06,556 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:30:06,824 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:30:07,371 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:07] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:30:07,687 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:07] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:30:13,455 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:13] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:30:13,720 [INFO] 127.0.0.1 - - [29/Mar/2025 15:30:13] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:31:11,895 [INFO] 127.0.0.1 - - [29/Mar/2025 15:31:11] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:31:12,233 [INFO] 127.0.0.1 - - [29/Mar/2025 15:31:12] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:31:17,776 [INFO] 127.0.0.1 - - [29/Mar/2025 15:31:17] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:31:18,041 [INFO] 127.0.0.1 - - [29/Mar/2025 15:31:18] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:32:11,426 [INFO] 127.0.0.1 - - [29/Mar/2025 15:32:11] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:32:11,761 [INFO] 127.0.0.1 - - [29/Mar/2025 15:32:11] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:32:41,780 [INFO] 127.0.0.1 - - [29/Mar/2025 15:32:41] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:32:42,037 [INFO] 127.0.0.1 - - [29/Mar/2025 15:32:42] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:33:39,632 [INFO] 127.0.0.1 - - [29/Mar/2025 15:33:39] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:33:39,966 [INFO] 127.0.0.1 - - [29/Mar/2025 15:33:39] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:44,068 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:44] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:44,317 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:44] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:48,048 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:48] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:48,381 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:48] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:52,860 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:52] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:34:53,097 [INFO] 127.0.0.1 - - [29/Mar/2025 15:34:53] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:35:59,872 [INFO] 127.0.0.1 - - [29/Mar/2025 15:35:59] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:36:00,119 [INFO] 127.0.0.1 - - [29/Mar/2025 15:36:00] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:36:57,876 [INFO] 127.0.0.1 - - [29/Mar/2025 15:36:57] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:36:58,190 [INFO] 127.0.0.1 - - [29/Mar/2025 15:36:58] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:37:32,436 [INFO] 127.0.0.1 - - [29/Mar/2025 15:37:32] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:37:32,695 [INFO] 127.0.0.1 - - [29/Mar/2025 15:37:32] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:11,241 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:11,562 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:44,568 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:44,823 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:54,937 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:55,249 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:55] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:56,061 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:56] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:38:56,300 [INFO] 127.0.0.1 - - [29/Mar/2025 15:38:56] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:53,831 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:53] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:54,150 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:54,249 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:54,474 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:54,716 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:39:54,787 [INFO] 127.0.0.1 - - [29/Mar/2025 15:39:54] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:38,589 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:38,847 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:44,151 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:44,469 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:44,942 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:44] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:45,135 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:45] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:45,343 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:45] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:45,653 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:45] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:46,185 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:46] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:41:46,448 [INFO] 127.0.0.1 - - [29/Mar/2025 15:41:46] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:29,900 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:29] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:30,216 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:30] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:42,863 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:43,123 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:43] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:55,331 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:55] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:42:55,642 [INFO] 127.0.0.1 - - [29/Mar/2025 15:42:55] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:44:13,420 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:13] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:44:14,236 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:14] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
-2025-03-29 15:44:21,470 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:21] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:44:22,328 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:22] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
-2025-03-29 15:44:38,302 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:38] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:44:38,637 [INFO] 127.0.0.1 - - [29/Mar/2025 15:44:38] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:46:30,834 [INFO] 127.0.0.1 - - [29/Mar/2025 15:46:30] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:46:31,691 [INFO] 127.0.0.1 - - [29/Mar/2025 15:46:31] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
-2025-03-29 15:46:42,567 [INFO] 127.0.0.1 - - [29/Mar/2025 15:46:42] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:46:43,486 [INFO] 127.0.0.1 - - [29/Mar/2025 15:46:43] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
-2025-03-29 15:47:51,837 [INFO] 127.0.0.1 - - [29/Mar/2025 15:47:51] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:47:52,641 [INFO] 127.0.0.1 - - [29/Mar/2025 15:47:52] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:47:54,364 [INFO] 127.0.0.1 - - [29/Mar/2025 15:47:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:47:54,690 [INFO] 127.0.0.1 - - [29/Mar/2025 15:47:54] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:48:17,977 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:17] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:48:18,774 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:18] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
-2025-03-29 15:48:20,514 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:20] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:48:20,844 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:20] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:48:52,168 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:52] "OPTIONS /register HTTP/1.1" 200 -
-2025-03-29 15:48:53,050 [INFO] 127.0.0.1 - - [29/Mar/2025 15:48:53] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
-2025-03-29 15:56:53,415 [INFO] 127.0.0.1 - - [29/Mar/2025 15:56:53] "OPTIONS /login HTTP/1.1" 200 -
-2025-03-29 15:56:54,187 [INFO] 127.0.0.1 - - [29/Mar/2025 15:56:54] "POST /login HTTP/1.1" 200 -
-2025-03-29 15:56:55,204 [INFO] 127.0.0.1 - - [29/Mar/2025 15:56:55] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:56:55,521 [INFO] 127.0.0.1 - - [29/Mar/2025 15:56:55] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:57:04,578 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:04] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:57:04,831 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:04] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:57:06,848 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:57:07,165 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:07] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:57:08,284 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:08] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:57:08,592 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:08] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:57:10,615 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:57:10,877 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:10] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:57:11,466 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:11] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:57:11,783 [INFO] 127.0.0.1 - - [29/Mar/2025 15:57:11] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:58:45,477 [INFO] Running job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 15:58:45 UTC)" (scheduled at 2025-03-29 15:58:45.462937+00:00)
-2025-03-29 15:58:45,510 [ERROR] Job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 16:28:45 UTC)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Sindhu\AppData\Roaming\Python\Python312\site-packages\apscheduler\executors\base.py", line 131, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 283, in check_price_drops
-    new_price = get_current_price(product.url)
-                ^^^^^^^^^^^^^^^^^
-NameError: name 'get_current_price' is not defined
-2025-03-29 15:59:05,955 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:05] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:06,209 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:06] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:06,483 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:06] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:59:06,801 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:06] "GET /products HTTP/1.1" 200 -
-2025-03-29 15:59:07,236 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:07] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:07,280 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:07] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:59:08,706 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:08] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:59:09,865 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:09] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
-2025-03-29 15:59:11,500 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:11] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:59:12,665 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:12] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:12,674 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:12] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
-2025-03-29 15:59:15,557 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:15] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 15:59:17,741 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:17] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:17,993 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:17] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:21,764 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:59:22,089 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:22] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 15:59:49,787 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:49] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:50,042 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:50] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 15:59:50,683 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:50] "OPTIONS /wishlist/3 HTTP/1.1" 200 -
-2025-03-29 15:59:51,015 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:51] "DELETE /wishlist/3 HTTP/1.1" 200 -
-2025-03-29 15:59:51,684 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:51] "OPTIONS /wishlist/1 HTTP/1.1" 200 -
-2025-03-29 15:59:52,014 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:52] "DELETE /wishlist/1 HTTP/1.1" 200 -
-2025-03-29 15:59:52,592 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:52] "OPTIONS /wishlist/4 HTTP/1.1" 200 -
-2025-03-29 15:59:52,930 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:52] "DELETE /wishlist/4 HTTP/1.1" 200 -
-2025-03-29 15:59:53,550 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:53] "OPTIONS /wishlist/5 HTTP/1.1" 200 -
-2025-03-29 15:59:53,885 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:53] "DELETE /wishlist/5 HTTP/1.1" 200 -
-2025-03-29 15:59:54,415 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:54] "OPTIONS /wishlist/8 HTTP/1.1" 200 -
-2025-03-29 15:59:54,751 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:54] "DELETE /wishlist/8 HTTP/1.1" 200 -
-2025-03-29 15:59:55,309 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:55] "OPTIONS /wishlist/9 HTTP/1.1" 200 -
-2025-03-29 15:59:55,643 [INFO] 127.0.0.1 - - [29/Mar/2025 15:59:55] "DELETE /wishlist/9 HTTP/1.1" 200 -
-2025-03-29 16:10:07,426 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:07] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:07,691 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:07] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:09,334 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:09] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:09,665 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:09] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:11,125 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:11,398 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:11,445 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:12,974 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:12] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:12,981 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:12] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:14,024 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:14] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:10:14,299 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:14] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:10:16,890 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:16] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:16,926 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:16] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 16:10:19,836 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:19] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:20,144 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:20] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:10:21,386 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:10:21,653 [INFO] 127.0.0.1 - - [29/Mar/2025 16:10:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:13:25,609 [INFO] 127.0.0.1 - - [29/Mar/2025 16:13:25] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:13:25,880 [INFO] 127.0.0.1 - - [29/Mar/2025 16:13:25] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:14:36,850 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:36] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:14:37,120 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:37] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:14:37,891 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:37] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:14:38,224 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:38] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:14:40,506 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:40] "OPTIONS /wishlist HTTP/1.1" 200 -
-2025-03-29 16:14:40,537 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:40] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
-2025-03-29 16:14:43,825 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:43] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:14:44,083 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:44] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:14:45,828 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:45] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:14:46,140 [INFO] 127.0.0.1 - - [29/Mar/2025 16:14:46] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:07,874 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:07] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:08,146 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:08] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:15,349 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:15] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:15,678 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:15] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:48,203 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:48,451 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:48,627 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:23:48,944 [INFO] 127.0.0.1 - - [29/Mar/2025 16:23:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:24:08,895 [INFO] 127.0.0.1 - - [29/Mar/2025 16:24:08] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:24:09,105 [INFO] 127.0.0.1 - - [29/Mar/2025 16:24:09] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:26:57,137 [INFO] 127.0.0.1 - - [29/Mar/2025 16:26:57] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:26:57,402 [INFO] 127.0.0.1 - - [29/Mar/2025 16:26:57] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:03,747 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:03] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:04,065 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:04] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:04,897 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:04] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,120 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,203 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,379 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,436 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,562 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,574 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:05,746 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:05] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:06,103 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:06] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:27:06,226 [INFO] 127.0.0.1 - - [29/Mar/2025 16:27:06] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:28:45,474 [INFO] Running job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 16:58:45 UTC)" (scheduled at 2025-03-29 16:28:45.462937+00:00)
-2025-03-29 16:28:45,493 [ERROR] Job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 16:58:45 UTC)" raised an exception
-Traceback (most recent call last):
-  File "C:\Users\Sindhu\AppData\Roaming\Python\Python312\site-packages\apscheduler\executors\base.py", line 131, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 283, in check_price_drops
-    product = Product.query.get(wishlist_item.product_id)
-                    ^^^^^^^^^^^^^^^^^
-NameError: name 'get_current_price' is not defined
-2025-03-29 16:33:20,003 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:20] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:20,121 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:20] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:32,934 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:32] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:33:33,258 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:33] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:33:34,222 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:34] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:33:34,484 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:34] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:33:38,472 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:38,795 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:42,259 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:42,573 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:42,788 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:42,884 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:42,987 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:53,864 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:53] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:33:53,874 [INFO] 127.0.0.1 - - [29/Mar/2025 16:33:53] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:35:25,321 [INFO] 127.0.0.1 - - [29/Mar/2025 16:35:25] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:35:25,581 [INFO] 127.0.0.1 - - [29/Mar/2025 16:35:25] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:11,036 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:11,198 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:11,362 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:21,179 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:21,187 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:25,811 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:25] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:26,063 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:26] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:30,461 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:30] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:38:30,787 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:30] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:38:31,808 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:31] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:38:32,078 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:32] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 16:38:36,489 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:36] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:36,805 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:36] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:38,064 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:38:38,324 [INFO] 127.0.0.1 - - [29/Mar/2025 16:38:38] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:39:12,374 [INFO] Scheduler has been shut down
-2025-03-29 16:39:12,385 [INFO] Scheduler shut down
-2025-03-29 16:39:16,690 [INFO] Scheduler created successfully.
-2025-03-29 16:39:16,712 [INFO] Added job "check_price_drops" to job store "default"
-2025-03-29 16:39:16,712 [INFO] Scheduler started
-2025-03-29 16:39:16,723 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
-2025-03-29 16:39:16,762 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-03-30 12:00:46,283 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:01:32,720 [INFO] 127.0.0.1 - - [30/Mar/2025 12:01:32] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:01:32,953 [INFO] 127.0.0.1 - - [30/Mar/2025 12:01:32] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:02:14,582 [INFO] 127.0.0.1 - - [30/Mar/2025 12:02:14] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:02:14,902 [INFO] 127.0.0.1 - - [30/Mar/2025 12:02:14] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:02:58,910 [INFO] 127.0.0.1 - - [30/Mar/2025 12:02:58] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:02:59,237 [INFO] 127.0.0.1 - - [30/Mar/2025 12:02:59] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:03:26,448 [INFO] 127.0.0.1 - - [30/Mar/2025 12:03:26] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:03:26,762 [INFO] 127.0.0.1 - - [30/Mar/2025 12:03:26] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:03:58,177 [INFO] 127.0.0.1 - - [30/Mar/2025 12:03:58] "OPTIONS /register HTTP/1.1" 200 -
+2025-03-30 12:03:59,215 [INFO] 127.0.0.1 - - [30/Mar/2025 12:03:59] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-30 12:04:22,694 [INFO] 127.0.0.1 - - [30/Mar/2025 12:04:22] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:04:23,247 [INFO] 127.0.0.1 - - [30/Mar/2025 12:04:23] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:04:40,568 [INFO] 127.0.0.1 - - [30/Mar/2025 12:04:40] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:04:41,114 [INFO] 127.0.0.1 - - [30/Mar/2025 12:04:41] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:05:09,988 [INFO] Scheduler has been shut down
+2025-03-30 12:05:09,993 [INFO] Scheduler shut down
+2025-03-30 12:05:09,999 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
-2025-03-29 16:39:16,774 [INFO] [33mPress CTRL+C to quit[0m
-2025-03-29 16:39:35,654 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:35] "[33mGET /notification HTTP/1.1[0m" 404 -
-2025-03-29 16:39:47,536 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:47] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:39:47,783 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:47] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:39:58,259 [INFO] 127.0.0.1 - - [29/Mar/2025 16:39:58] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:40:09,807 [INFO] 127.0.0.1 - - [29/Mar/2025 16:40:09] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:41:50,182 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:50] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:41:50,436 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:50] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:41:53,561 [INFO] 127.0.0.1 - - [29/Mar/2025 16:41:53] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:42:17,832 [INFO] 127.0.0.1 - - [29/Mar/2025 16:42:17] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:43:31,381 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:31] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:43:31,626 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:31] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:43:36,349 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:36] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:43:58,983 [INFO] 127.0.0.1 - - [29/Mar/2025 16:43:58] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:45:56,131 [INFO] 127.0.0.1 - - [29/Mar/2025 16:45:56] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:46:03,130 [INFO] 127.0.0.1 - - [29/Mar/2025 16:46:03] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:46:11,452 [INFO] 127.0.0.1 - - [29/Mar/2025 16:46:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:50:42,894 [INFO] 127.0.0.1 - - [29/Mar/2025 16:50:42] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:51:48,453 [INFO] 127.0.0.1 - - [29/Mar/2025 16:51:48] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:53:43,085 [INFO] 127.0.0.1 - - [29/Mar/2025 16:53:43] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:53:51,786 [INFO] 127.0.0.1 - - [29/Mar/2025 16:53:51] "GET /products HTTP/1.1" 200 -
-2025-03-29 16:54:03,760 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:03] "[33mGET /home HTTP/1.1[0m" 404 -
-2025-03-29 16:54:13,866 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:13] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
-2025-03-29 16:54:28,376 [INFO] 127.0.0.1 - - [29/Mar/2025 16:54:28] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 16:58:11,866 [INFO] 127.0.0.1 - - [29/Mar/2025 16:58:11] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 16:59:21,253 [INFO] 127.0.0.1 - - [29/Mar/2025 16:59:21] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:01:20,581 [INFO] 127.0.0.1 - - [29/Mar/2025 17:01:20] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:01:24,950 [INFO] 127.0.0.1 - - [29/Mar/2025 17:01:24] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:03:13,007 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:13] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:03:30,780 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:30] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:03:31,045 [INFO] 127.0.0.1 - - [29/Mar/2025 17:03:31] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:06:47,584 [INFO] 127.0.0.1 - - [29/Mar/2025 17:06:47] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:09:16,698 [INFO] Running job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 17:09:16 UTC)" (scheduled at 2025-03-29 17:09:16.690648+00:00)
-2025-03-29 17:09:16,698 [INFO] Checking for price drops at 2025-03-29 17:09:16.698510+00:00...
-2025-03-29 17:09:16,720 [INFO] Discount Applied! SAMSUNG Galaxy A16 5G A Series Cell Phone, Unlocked Android Smartphone, Large AMOLED Display, Durable Design, Super Fast Charging, Expandable Storage, US Version, 2025, Blue Black: Old = 174.99, New = 157.49
-2025-03-29 17:09:16,740 [ERROR] Job "check_price_drops (trigger: interval[0:30:00], next run at: 2025-03-29 17:39:16 UTC)" raised an exception
-Traceback (most recent call last):
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
-    self.dialect.do_execute(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: NOT NULL constraint failed: notification.product_name
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 321, in check_price_drops
-    product_id=product.id,
-    ^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\scoping.py", line 599, in commit
-    return self._proxied.commit()
-           ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2032, in commit
-    trans.commit(_to_root=True)
-  File "<string>", line 2, in commit
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 1313, in commit
-    self._prepare_impl()
-  File "<string>", line 2, in _prepare_impl
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 1288, in _prepare_impl
-    self.session.flush()
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4353, in flush
-    self._flush(objects)
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4488, in _flush
-    with util.safe_reraise():
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
-    raise exc_value.with_traceback(exc_tb)
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 4449, in _flush
-    flush_context.execute()
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
-    rec.execute(self)
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\persistence.py", line 93, in save_obj
-    _emit_insert_statements(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\persistence.py", line 1233, in _emit_insert_statements
-    result = connection.execute(
-             ^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1416, in execute
-    return meth(
-           ^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\sql\elements.py", line 523, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1638, in _execute_clauseelement
-    ret = self._execute_context(
-          ^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1843, in _execute_context
-    return self._exec_single_context(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1983, in _exec_single_context
-    self._handle_dbapi_exception(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 2352, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\base.py", line 1964, in _exec_single_context
-    self.dialect.do_execute(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 942, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) NOT NULL constraint failed: notification.product_name
-[SQL: INSERT INTO notification (user_id, product_id, product_name, old_price, new_price, timestamp, read) VALUES (?, ?, ?, ?, ?, ?, ?)]
-[parameters: (1, 3, None, 174.99, 157.49, '2025-03-29 17:09:16.726265', 0)]
-(Background on this error at: https://sqlalche.me/e/20/gkpj)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "C:\Users\Sindhu\AppData\Roaming\Python\Python312\site-packages\apscheduler\executors\base.py", line 131, in run_job
-    retval = job.func(*job.args, **job.kwargs)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Sindhu\OneDrive\Desktop\price-drop\backend\app.py", line 326, in check_price_drops
-    )
-      
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 566, in __get__
-    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1086, in get
-    value = self._fire_loader_callables(state, key, passive)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\attributes.py", line 1116, in _fire_loader_callables
-    return state._load_expired(state, passive)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state.py", line 803, in _load_expired
-    self.manager.expired_attribute_loader(self, toload, passive)
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 1670, in load_scalar_attributes
-    result = load_on_ident(
-             ^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 509, in load_on_ident
-    return load_on_pk_identity(
-           ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\loading.py", line 694, in load_on_pk_identity
-    session.execute(
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2365, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2241, in _execute_internal
-    conn = self._connection_for_bind(bind)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 2110, in _connection_for_bind
-    return trans._connection_for_bind(engine, execution_options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 2, in _connection_for_bind
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 103, in _go
-    self._raise_for_prerequisite_state(fn.__name__, current_state)
-  File "C:\Program Files\Python312\Lib\site-packages\sqlalchemy\orm\session.py", line 973, in _raise_for_prerequisite_state
-    raise sa_exc.PendingRollbackError(
-sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (sqlite3.IntegrityError) NOT NULL constraint failed: notification.product_name
-[SQL: INSERT INTO notification (user_id, product_id, product_name, old_price, new_price, timestamp, read) VALUES (?, ?, ?, ?, ?, ?, ?)]
-[parameters: (1, 3, None, 174.99, 157.49, '2025-03-29 17:09:16.726265', 0)]
-(Background on this error at: https://sqlalche.me/e/20/gkpj) (Background on this error at: https://sqlalche.me/e/20/7s2a)
-2025-03-29 17:09:26,190 [INFO] 127.0.0.1 - - [29/Mar/2025 17:09:26] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:11:05,516 [INFO] 127.0.0.1 - - [29/Mar/2025 17:11:05] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:12:21,389 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:21] "[31m[1mPOST /notifications HTTP/1.1[0m" 405 -
-2025-03-29 17:12:46,192 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:46] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:46,449 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:46] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:47,116 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:47] "GET /products HTTP/1.1" 200 -
-2025-03-29 17:12:47,439 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:47] "GET /products HTTP/1.1" 200 -
-2025-03-29 17:12:48,481 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:48] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 17:12:48,725 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:48] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 17:12:49,400 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:49] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:49,722 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:49] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:51,100 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:51] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:51,358 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:51] "GET /notifications HTTP/1.1" 200 -
-2025-03-29 17:12:53,047 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:53] "GET /wishlist HTTP/1.1" 200 -
-2025-03-29 17:12:53,379 [INFO] 127.0.0.1 - - [29/Mar/2025 17:12:53] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:05:10,000 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:05:10,002 [INFO]  * Restarting with stat
+2025-03-30 12:05:11,020 [INFO] Scheduler created successfully.
+2025-03-30 12:05:11,029 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:05:11,029 [INFO] Scheduler started
+2025-03-30 12:05:11,035 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:05:11,045 [WARNING]  * Debugger is active!
+2025-03-30 12:05:11,045 [INFO]  * Debugger PIN: 125-110-483
+2025-03-30 12:05:13,080 [INFO] Scheduler has been shut down
+2025-03-30 12:05:13,085 [INFO] Scheduler shut down
+2025-03-30 12:05:13,087 [WARNING]  * Debugger is active!
+2025-03-30 12:05:13,087 [INFO]  * Debugger PIN: 125-110-483
+2025-03-30 12:05:15,366 [INFO] Scheduler created successfully.
+2025-03-30 12:05:15,373 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:05:15,373 [INFO] Scheduler started
+2025-03-30 12:05:15,379 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:05:15,393 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 12:05:15,393 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:05:27,803 [INFO] 127.0.0.1 - - [30/Mar/2025 12:05:27] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:05:28,813 [INFO] 127.0.0.1 - - [30/Mar/2025 12:05:28] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:05:40,775 [INFO] 127.0.0.1 - - [30/Mar/2025 12:05:40] "[31m[1mGET /login HTTP/1.1[0m" 405 -
+2025-03-30 12:05:46,250 [INFO] 127.0.0.1 - - [30/Mar/2025 12:05:46] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 12:06:49,036 [INFO] 127.0.0.1 - - [30/Mar/2025 12:06:49] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 12:06:54,758 [INFO] 127.0.0.1 - - [30/Mar/2025 12:06:54] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-30 12:06:58,516 [INFO] 127.0.0.1 - - [30/Mar/2025 12:06:58] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-30 12:07:17,530 [INFO] 127.0.0.1 - - [30/Mar/2025 12:07:17] "[35m[1mPOST /register HTTP/1.1[0m" 500 -
+2025-03-30 12:07:32,689 [INFO] 127.0.0.1 - - [30/Mar/2025 12:07:32] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-30 12:07:39,476 [INFO] 127.0.0.1 - - [30/Mar/2025 12:07:39] "[31m[1mGET /register HTTP/1.1[0m" 405 -
+2025-03-30 12:07:50,472 [INFO] 127.0.0.1 - - [30/Mar/2025 12:07:50] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-03-30 12:08:01,044 [INFO] 127.0.0.1 - - [30/Mar/2025 12:08:01] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:08:01,834 [INFO] 127.0.0.1 - - [30/Mar/2025 12:08:01] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:09:46,440 [INFO] 127.0.0.1 - - [30/Mar/2025 12:09:46] "OPTIONS /register HTTP/1.1" 200 -
+2025-03-30 12:09:47,326 [INFO] 127.0.0.1 - - [30/Mar/2025 12:09:47] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-30 12:09:58,328 [INFO] 127.0.0.1 - - [30/Mar/2025 12:09:58] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:09:59,299 [INFO] 127.0.0.1 - - [30/Mar/2025 12:09:59] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-03-30 12:10:07,576 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:07] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:10:08,577 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:08] "POST /login HTTP/1.1" 200 -
+2025-03-30 12:10:12,928 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:12] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:10:13,243 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:13] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:10:15,011 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:15] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:10:15,186 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:15] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-30 12:10:18,071 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:18] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:10:18,319 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:18] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:10:19,337 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:19] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:10:19,653 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:19] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:10:21,243 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:21] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:10:21,494 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:21] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:10:22,404 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:22] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:10:22,728 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:22] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:10:43,488 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:43] "[31m[1mPOST /notifications HTTP/1.1[0m" 400 -
+2025-03-30 12:10:59,637 [INFO] 127.0.0.1 - - [30/Mar/2025 12:10:59] "[35m[1mPOST /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:11:24,513 [INFO] 127.0.0.1 - - [30/Mar/2025 12:11:24] "[35m[1mPOST /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:11:33,580 [INFO] 127.0.0.1 - - [30/Mar/2025 12:11:33] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:12:17,113 [INFO] 127.0.0.1 - - [30/Mar/2025 12:12:17] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:12:21,608 [INFO] 127.0.0.1 - - [30/Mar/2025 12:12:21] "[35m[1mGET /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:13:32,208 [INFO] Scheduler created successfully.
+2025-03-30 12:13:32,221 [INFO] Added job "check_price_drops" to job store "default"
+2025-03-30 12:13:32,221 [INFO] Scheduler started
+2025-03-30 12:13:32,224 [INFO] Scheduler started with jobs: [<Job (id=price_check_job name=check_price_drops)>]
+2025-03-30 12:13:32,242 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-30 12:13:32,242 [INFO] [33mPress CTRL+C to quit[0m
+2025-03-30 12:14:01,188 [INFO] 127.0.0.1 - - [30/Mar/2025 12:14:01] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:14:10,021 [INFO] 127.0.0.1 - - [30/Mar/2025 12:14:10] "[35m[1mPOST /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:15:04,162 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:04] "OPTIONS /register HTTP/1.1" 200 -
+2025-03-30 12:15:05,037 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:05] "[35m[1mPOST /register HTTP/1.1[0m" 201 -
+2025-03-30 12:15:11,992 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:11] "OPTIONS /login HTTP/1.1" 200 -
+2025-03-30 12:15:13,126 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:13] "POST /login HTTP/1.1" 200 -
+2025-03-30 12:15:20,055 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:20] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:15:20,448 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:20] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:15:32,058 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:32] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:15:32,078 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:32] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-30 12:15:35,641 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:35] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:15:35,891 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:35] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:15:36,927 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:36] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:15:37,248 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:37] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:15:38,430 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:15:38,685 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:38] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:15:41,652 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:41] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:15:42,026 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:42] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:15:42,874 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:42] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:15:43,099 [INFO] 127.0.0.1 - - [30/Mar/2025 12:15:43] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:16:07,244 [INFO] 127.0.0.1 - - [30/Mar/2025 12:16:07] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:16:07,495 [INFO] 127.0.0.1 - - [30/Mar/2025 12:16:07] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:16:08,281 [INFO] 127.0.0.1 - - [30/Mar/2025 12:16:08] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:16:08,608 [INFO] 127.0.0.1 - - [30/Mar/2025 12:16:08] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:16:44,755 [INFO] 127.0.0.1 - - [30/Mar/2025 12:16:44] "[35m[1mPOST /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:20:09,229 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:09] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:09,492 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:09] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:10,289 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:10] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:20:10,612 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:10] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:20:11,538 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:11,796 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:11] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:13,677 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:13] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:14,005 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:14] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:15,484 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:15] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:15,539 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:15] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:15,830 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:15] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:15,864 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:15] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:20:15,966 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:15] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:16,190 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:16] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:17,079 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:17] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:17,109 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:17] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:18,603 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:18] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:18,842 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:18] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:20:57,487 [INFO] 127.0.0.1 - - [30/Mar/2025 12:20:57] "[35m[1mPOST /notifications HTTP/1.1[0m" 500 -
+2025-03-30 12:21:00,625 [INFO] 127.0.0.1 - - [30/Mar/2025 12:21:00] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:21:00,936 [INFO] 127.0.0.1 - - [30/Mar/2025 12:21:00] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:21:09,496 [INFO] 127.0.0.1 - - [30/Mar/2025 12:21:09] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:21:09,763 [INFO] 127.0.0.1 - - [30/Mar/2025 12:21:09] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:54,800 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:54] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:55,066 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:55] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:56,233 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:56] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:27:56,547 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:56] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:27:57,853 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:58,114 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:58] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:59,623 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:59] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:27:59,951 [INFO] 127.0.0.1 - - [30/Mar/2025 12:27:59] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:28:43,024 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:43] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:28:43,278 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:43] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:28:47,577 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:47] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:28:47,897 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:47] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:28:48,692 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:48] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:28:48,960 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:48] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:28:51,454 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:51] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:28:51,474 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:51] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-30 12:28:56,194 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:56] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:28:56,545 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:56] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:28:57,496 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:28:57,807 [INFO] 127.0.0.1 - - [30/Mar/2025 12:28:57] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:29:00,060 [INFO] 127.0.0.1 - - [30/Mar/2025 12:29:00] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:29:00,328 [INFO] 127.0.0.1 - - [30/Mar/2025 12:29:00] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:31:59,445 [INFO] 127.0.0.1 - - [30/Mar/2025 12:31:59] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:31:59,813 [INFO] 127.0.0.1 - - [30/Mar/2025 12:31:59] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:31:59,826 [INFO] 127.0.0.1 - - [30/Mar/2025 12:31:59] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:32:01,864 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:01] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:01,925 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:01] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
+2025-03-30 12:32:05,047 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:05] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:05,312 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:05] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:06,339 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:06] "OPTIONS /wishlist/1 HTTP/1.1" 200 -
+2025-03-30 12:32:06,668 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:06] "DELETE /wishlist/1 HTTP/1.1" 200 -
+2025-03-30 12:32:07,838 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:07] "OPTIONS /wishlist/3 HTTP/1.1" 200 -
+2025-03-30 12:32:08,184 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:08] "DELETE /wishlist/3 HTTP/1.1" 200 -
+2025-03-30 12:32:09,682 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:09] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:32:09,999 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:09] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:32:11,564 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:11] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:11,601 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:11] "[35m[1mPOST /wishlist HTTP/1.1[0m" 201 -
+2025-03-30 12:32:15,305 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:15] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:32:15,516 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:15] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:32:16,669 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:16] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:16,985 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:16] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:17,925 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:17] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:18,166 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:18] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:32:18,720 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:18] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:32:19,048 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:19] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:32:19,698 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:19] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:32:19,958 [INFO] 127.0.0.1 - - [30/Mar/2025 12:32:19] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:38:40,291 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:40] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:38:40,550 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:40] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:38:42,588 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:42] "OPTIONS /wishlist HTTP/1.1" 200 -
+2025-03-30 12:38:42,607 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:42] "[31m[1mPOST /wishlist HTTP/1.1[0m" 400 -
+2025-03-30 12:38:45,340 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:45] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:38:45,650 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:45] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:38:46,708 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:38:46,980 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:46] "GET /wishlist HTTP/1.1" 200 -
+2025-03-30 12:38:47,726 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:47] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:38:48,056 [INFO] 127.0.0.1 - - [30/Mar/2025 12:38:48] "GET /products HTTP/1.1" 200 -
+2025-03-30 12:40:34,753 [INFO] 127.0.0.1 - - [30/Mar/2025 12:40:34] "GET /notifications HTTP/1.1" 200 -
+2025-03-30 12:40:35,002 [INFO] 127.0.0.1 - - [30/Mar/2025 12:40:35] "GET /notifications HTTP/1.1" 200 -

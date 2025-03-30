@@ -7,8 +7,7 @@ const NotificationPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-
-  // Fetch notifications from the backend
+  
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
@@ -29,30 +28,32 @@ const NotificationPage = () => {
 
     fetchNotifications();
   }, []);
-
-  // Function to add a new notification
   const addNotification = async (notificationData) => {
     try {
-      const response = await fetch('http://localhost:5000/notifications', {
-        method: 'POST',
+      console.log("Sending data:", notificationData); 
+  
+      const response = await fetch("http://localhost:5000/notifications", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Accept": "application/json",
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(notificationData),
       });
-
+  
       if (!response.ok) {
-        throw new Error('Failed to add notification');
+        throw new Error(`Failed to add notification: ${response.status} ${response.statusText}`);
       }
-
+  
       const result = await response.json();
-      console.log('Notification added:', result);
-
-      setNotifications((prev) => [...prev, result]); // Update UI with new notification
+      console.log("Notification added:", result);
+  
+      setNotifications((prev) => [...prev, result]);
     } catch (error) {
-      console.error('Error adding notification:', error);
+      console.error("Error adding notification:", error);
     }
   };
+  
 
   if (loading) {
     return (

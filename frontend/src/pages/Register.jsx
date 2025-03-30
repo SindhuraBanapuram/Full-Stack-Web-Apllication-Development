@@ -45,7 +45,7 @@ const Register = () => {
     const data = await response.json();
     if (response.ok) {
       alert("Registration successful");
-      navigate("/login");
+      navigate("/");
     } else {
       alert(data.error || "Registration failed");
     }
