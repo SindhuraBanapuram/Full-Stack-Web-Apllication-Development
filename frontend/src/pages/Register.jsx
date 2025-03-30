@@ -68,7 +68,6 @@ const Register = () => {
             onFocus={() => setPasswordFocused(true)}
             required 
           />
-          {/* Show criteria when input is focused but empty */}
           {passwordFocused && !password && (
             <div className={styles.passwordCriteria}>
               <p>Password must contain:</p>
