@@ -31,11 +31,19 @@ const NotificationPage = () => {
     
         const data = await response.json();
         console.log("Fetched notifications:", data);
+        if (data.notifications) {
+          setNotifications(data.notifications);
+        } else if (data.message) {
+          setNotifications([]);
+        }
+        setLoading(false);
+        
       } catch (error) {
         console.error("Error fetching notifications:", error);
+        setError(error.message);
+        setLoading(false);
       }
     };
-    
     
 
     fetchNotifications();
@@ -91,7 +99,7 @@ const NotificationPage = () => {
             <div 
               key={notification.id} 
               className={styles.notificationCard}
-              onClick={() => navigate(`/product/${notification.product_id}`)}
+              onClick={() => navigate(`/Home/${notification.product_id}`)}
             >
               <img 
                 src={notification.image_url} 

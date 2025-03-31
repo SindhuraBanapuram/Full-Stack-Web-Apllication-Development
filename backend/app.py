@@ -120,22 +120,19 @@ def get_products():
 wishlist = []
 
 @app.route("/wishlist", methods=["POST"])
-@jwt_required()
 def add_to_wishlist():
-    data = request.json
+    data = request.json 
     print("Received Wishlist Request:", data)
-
+    
     if not data or "product_id" not in data:
         return jsonify({"error": "Invalid product data"}), 400
 
-    user_id = get_jwt_identity() 
-
-    existing_product = Wishlist.query.filter_by(user_id=user_id, product_id=data["product_id"]).first()
+    existing_product = Wishlist.query.filter_by(product_id=data["product_id"]).first()
     if existing_product:
         return jsonify({"message": "Product already in wishlist"}), 400
 
     new_wishlist_item = Wishlist(
-        user_id=user_id,
+        user_id=1,
         product_id=data["product_id"],
         name=data["name"],
         price=data["price"],
@@ -143,24 +140,9 @@ def add_to_wishlist():
     )
     db.session.add(new_wishlist_item)
     db.session.commit()
-    return jsonify({"message": "Product added to wishlist"}), 201
-    product = Product.query.get(data["product_id"])
-    if product:
-        new_price = get_current_price(product.url)
-        if new_price and new_price < product.price * (1 - PRICE_CHANGE_THRESHOLD):
-            notification = Notification(
-                user_id=new_wishlist_item.user_id,
-                product_id=product.id,
-                product_name=product.name,
-                old_price=product.price,
-                new_price=new_price,
-                image_url=product.image_url
-            )
-            db.session.add(notification)
-            product.price = new_price
-            db.session.commit()
-
+    
     Timer(5, check_price_drops).start()
+    return jsonify({"message": "Product added to wishlist"}), 201
 
 @app.route("/wishlist", methods=["GET"])
 def get_wishlist():
@@ -191,13 +173,11 @@ def delete_from_wishlist(product_id):
     return jsonify({"message": "Product removed from wishlist"})
 
 
-
 @app.route('/notifications', methods=['GET'])
 def get_notifications():
-    return jsonify({"message": "Notifications fetched successfully"}), 200
     notifications = Notification.query.order_by(Notification.timestamp.desc()).all()
     
-    return jsonify([
+    notifications_data = [
         {
             "id": n.id,
             "user_id": n.user_id,
@@ -209,8 +189,12 @@ def get_notifications():
             "image_url": n.image_url or "/placeholder-product.png"
         }
         for n in notifications
-    ])
-
+    ]
+    
+    return jsonify({
+        "message": "Notifications fetched successfully",
+        "notifications": notifications_data
+    })
 
 @app.route("/notifications", methods=["POST"])
 def add_notification():
