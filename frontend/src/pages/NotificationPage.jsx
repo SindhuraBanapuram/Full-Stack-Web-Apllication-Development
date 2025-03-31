@@ -18,10 +18,10 @@ const NotificationPage = () => {
     
         const response = await fetch("http://127.0.0.1:5000/notifications", {
           method: "GET",
-          credentials: "include", // Ensure credentials are included
+          credentials: "include",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`, // Attach the JWT token
+            "Authorization": `Bearer ${token}`,
           },
         });
     
@@ -57,7 +57,7 @@ const NotificationPage = () => {
 
       const newNotification = await response.json();
       console.log("Notification added:", newNotification);
-      setNotifications((prev) => [newNotification, ...prev]); // Update UI
+      setNotifications((prev) => [newNotification, ...prev]);
     } catch (error) {
       console.error("Error adding notification:", error);
     }
