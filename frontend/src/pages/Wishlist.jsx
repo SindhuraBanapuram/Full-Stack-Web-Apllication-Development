@@ -78,7 +78,7 @@ const Wishlist = () => {
           <p className={styles.emptyMessage}>Your wishlist is empty</p>
           <button 
             className={styles.browseButton}
-            onClick={() => window.location.href = "/products"}
+            onClick={() => window.location.href = "/Home"}
           >
             Browse Products
           </button>

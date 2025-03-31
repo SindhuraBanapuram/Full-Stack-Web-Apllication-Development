@@ -1,59 +1,67 @@
-import { useState, useEffect } from 'react';
-import styles from './Notification.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import styles from "./Notification.module.css";
+import { useNavigate } from "react-router-dom";
 
 const NotificationPage = () => {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await fetch('http://localhost:5000/notifications');
-        if (!response.ok) {
-          throw new Error('Failed to fetch notifications');
+        const token = localStorage.getItem("token");
+        if (!token) {
+          throw new Error("User not authenticated");
         }
+    
+        const response = await fetch("http://127.0.0.1:5000/notifications", {
+          method: "GET",
+          credentials: "include", // Ensure credentials are included
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`, // Attach the JWT token
+          },
+        });
+    
+        if (!response.ok) {
+          throw new Error("Failed to fetch notifications");
+        }
+    
         const data = await response.json();
-        console.log('Fetched notifications:', data);
-        setNotifications(data);
+        console.log("Fetched notifications:", data);
       } catch (error) {
-        console.error('Error fetching notifications:', error);
-        setError(error.message);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching notifications:", error);
       }
     };
+    
+    
 
     fetchNotifications();
   }, []);
+
   const addNotification = async (notificationData) => {
     try {
-      console.log("Sending data:", notificationData); 
-  
       const response = await fetch("http://localhost:5000/notifications", {
         method: "POST",
         headers: {
-          "Accept": "application/json",
           "Content-Type": "application/json",
         },
         body: JSON.stringify(notificationData),
       });
-  
+
       if (!response.ok) {
-        throw new Error(`Failed to add notification: ${response.status} ${response.statusText}`);
+        throw new Error("Failed to add notification");
       }
-  
-      const result = await response.json();
-      console.log("Notification added:", result);
-  
-      setNotifications((prev) => [...prev, result]);
+
+      const newNotification = await response.json();
+      console.log("Notification added:", newNotification);
+      setNotifications((prev) => [newNotification, ...prev]); // Update UI
     } catch (error) {
       console.error("Error adding notification:", error);
     }
   };
-  
 
   if (loading) {
     return (
@@ -89,7 +97,7 @@ const NotificationPage = () => {
                 src={notification.image_url} 
                 alt={notification.product_name}
                 className={styles.productImage}
-                onError={(e) => e.target.src = '/placeholder-product.png'}
+                onError={(e) => e.target.src = "/placeholder-product.png"}
               />
               <div className={styles.notificationContent}>
                 <h3>{notification.product_name}</h3>

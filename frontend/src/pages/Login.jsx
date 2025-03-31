@@ -2,26 +2,30 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 
-const Login = () => {
+const Login = ({ setWishlist, setNotifications }) => {
   const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    
     const response = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ identifier, password }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ identifier, password }),
     });
+
     const data = await response.json();
+
     if (response.ok) {
-      alert("Login successful");
-      navigate("/Home");
+        localStorage.setItem("token", data.access_token);
+        alert("Login successful!");
+        navigate("/Home");
     } else {
-      alert(data.error || "Login failed");
+        alert(data.message);
     }
-  };
+};
 
   return (
     <div className={styles.container}>

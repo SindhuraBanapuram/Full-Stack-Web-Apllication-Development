@@ -15,28 +15,30 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from functools import lru_cache
+from threading import Timer
 import sqlite3
 import logging
 import secrets
 import sys
+import traceback
 import os
 os.environ['TZ'] = 'UTC'
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config["JWT_SECRET_KEY"] = "secrets.token_hex(32)"
+app.config["JWT_SECRET_KEY"] = secrets.token_hex(32)
 jwt = JWTManager(app)
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-jwt = JWTManager(app)
 
 REQUEST_TIMEOUT = 15 
 PRICE_CHANGE_THRESHOLD = 0.01
-CHECK_INTERVAL_SECONDS = 3600
+CHECK_INTERVAL_SECONDS = 60
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -118,19 +120,22 @@ def get_products():
 wishlist = []
 
 @app.route("/wishlist", methods=["POST"])
+@jwt_required()
 def add_to_wishlist():
-    data = request.json 
+    data = request.json
     print("Received Wishlist Request:", data)
-    
+
     if not data or "product_id" not in data:
         return jsonify({"error": "Invalid product data"}), 400
 
-    existing_product = Wishlist.query.filter_by(product_id=data["product_id"]).first()
+    user_id = get_jwt_identity() 
+
+    existing_product = Wishlist.query.filter_by(user_id=user_id, product_id=data["product_id"]).first()
     if existing_product:
         return jsonify({"message": "Product already in wishlist"}), 400
 
     new_wishlist_item = Wishlist(
-        user_id= 1,
+        user_id=user_id,
         product_id=data["product_id"],
         name=data["name"],
         price=data["price"],
@@ -138,10 +143,24 @@ def add_to_wishlist():
     )
     db.session.add(new_wishlist_item)
     db.session.commit()
+    return jsonify({"message": "Product added to wishlist"}), 201
+    product = Product.query.get(data["product_id"])
+    if product:
+        new_price = get_current_price(product.url)
+        if new_price and new_price < product.price * (1 - PRICE_CHANGE_THRESHOLD):
+            notification = Notification(
+                user_id=new_wishlist_item.user_id,
+                product_id=product.id,
+                product_name=product.name,
+                old_price=product.price,
+                new_price=new_price,
+                image_url=product.image_url
+            )
+            db.session.add(notification)
+            product.price = new_price
+            db.session.commit()
 
     Timer(5, check_price_drops).start()
-
-    return jsonify({"message": "Product added to wishlist"}), 201
 
 @app.route("/wishlist", methods=["GET"])
 def get_wishlist():
@@ -171,48 +190,34 @@ def delete_from_wishlist(product_id):
 
     return jsonify({"message": "Product removed from wishlist"})
 
-from flask import request, jsonify
-from datetime import datetime
 
-@app.route("/notifications", methods=["GET"])
+
+@app.route('/notifications', methods=['GET'])
 def get_notifications():
-    try:
-        user_id = 1 
-        notifications = Notification.query.filter_by(user_id=user_id).all()
-
-        return jsonify([
-            {
-                "id": n.id,
-                "product_id": n.product_id,
-                "product_name": n.product_name,
-                "old_price": n.old_price,
-                "new_price": n.new_price,
-                "image_url": n.image_url,
-                "timestamp": n.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-                "read": n.read
-            } for n in notifications
-        ])
-    except Exception as e:
-        print("Error fetching notifications:", e)
-        return jsonify({"error": "Failed to fetch notifications"}), 500
+    return jsonify({"message": "Notifications fetched successfully"}), 200
+    notifications = Notification.query.order_by(Notification.timestamp.desc()).all()
+    
+    return jsonify([
+        {
+            "id": n.id,
+            "user_id": n.user_id,
+            "product_id": n.product_id,
+            "product_name": n.product_name,
+            "old_price": n.old_price,
+            "new_price": n.new_price,
+            "timestamp": n.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+            "image_url": n.image_url or "/placeholder-product.png"
+        }
+        for n in notifications
+    ])
 
 
-
-@app.route('/notifications', methods=['POST'])
+@app.route("/notifications", methods=["POST"])
 def add_notification():
     try:
-        if request.content_type != 'application/json':
-            return jsonify({"error": "Unsupported Media Type"}), 415
-
-        data = request.get_json(force=True)
-
-        if not data:
-            return jsonify({"error": "No data provided"}), 400
-
-        required_fields = ["user_id", "product_id", "product_name", "old_price", "new_price"]
-        for field in required_fields:
-            if field not in data or data[field] is None:
-                return jsonify({"error": f"Missing field: {field}"}), 400
+        data = request.json
+        if not all(key in data for key in ["user_id", "product_id", "product_name", "old_price", "new_price"]):
+            return jsonify({"error": "Missing required fields"}), 400
 
         new_notification = Notification(
             user_id=data["user_id"],
@@ -220,31 +225,24 @@ def add_notification():
             product_name=data["product_name"],
             old_price=data["old_price"],
             new_price=data["new_price"],
-            image_url=data.get("image_url")
+            image_url=data.get("image_url", "/placeholder-product.png"),
         )
 
         db.session.add(new_notification)
         db.session.commit()
 
         return jsonify({
-            "message": "Notification added successfully!",
-            "data": {
-                "id": new_notification.id,
-                "user_id": new_notification.user_id,
-                "product_id": new_notification.product_id,
-                "product_name": new_notification.product_name,
-                "old_price": new_notification.old_price,
-                "new_price": new_notification.new_price,
-                "image_url": new_notification.image_url,
-                "timestamp": new_notification.timestamp.strftime("%Y-%m-%d %H:%M:%S")
-            }
+            "id": new_notification.id,
+            "user_id": new_notification.user_id,
+            "product_id": new_notification.product_id,
+            "product_name": new_notification.product_name,
+            "old_price": new_notification.old_price,
+            "new_price": new_notification.new_price,
+            "timestamp": new_notification.timestamp.strftime("%Y-%m-%d %H:%M:%S"),
+            "image_url": new_notification.image_url
         }), 201
-
     except Exception as e:
-        db.session.rollback()  
-        print("Error adding notification:", str(e))
-        return jsonify({"error": str(e)}), 500
-
+        return jsonify({"error": str(e)}), 400
 
 def scrape_products():
     print("Starting Amazon scrape...")
